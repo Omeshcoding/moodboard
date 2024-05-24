@@ -40,6 +40,7 @@ const Canvas = () => {
       onMouseDown={startDrawing}
       onMouseUp={stopDrawing}
       onMouseMove={draw}
+      onMouseOut={stopDrawing}
     />
   );
 };
