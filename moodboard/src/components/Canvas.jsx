@@ -22,7 +22,10 @@ const Canvas = () => {
     context.lineTo(offsetX, offsetY);
     context.stroke();
   };
-
+  const stopDrawing = () => {
+    context.closePath();
+    setIsDrawing(false);
+  };
   useEffect(() => {
     const canvas = canvasRef.current;
     canvas.width = window.innerWidth * 0.9;
@@ -35,6 +38,7 @@ const Canvas = () => {
       ref={canvasRef}
       style={styles}
       onMouseDown={startDrawing}
+      onMouseUp={stopDrawing}
       onMouseMove={draw}
     />
   );
