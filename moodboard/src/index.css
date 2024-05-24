@@ -12,5 +12,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+::-webkit-scrollbar {
+  display: none;
 }
