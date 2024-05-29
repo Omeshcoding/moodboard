@@ -10,11 +10,22 @@ const io = socketIo(server, {
   },
 });
 
+let images = [];
+
 io.on('connection', (socket) => {
   console.log('New client connected');
 
   socket.on('draw', (data) => {
     io.emit('draw', data);
+  });
+
+  // Send the current images to the new user
+  socket.emit('initialImages', images);
+
+  // Handle image updates
+  socket.on('updateImages', (updatedImages) => {
+    images = updatedImages;
+    socket.broadcast.emit('updateImages', images);
   });
 
   socket.on('addImage', (data) => {
