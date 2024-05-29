@@ -9,13 +9,13 @@ const Navbar = () => {
   return (
     <nav className="flex justify-center items-center self-stretch md:px-16 py-7 w-full text-white bg-red-900 max-md:px-1 max-md:max-w-full">
       <div className=" relative flex justify-between items-center gap-5 w-full max-w-[1600px] max-md:flex-wrap ">
-        <div className="flex-auto text-2xl md:text-3xl max-md:pl-4 xl:text-4xl font-medium">
+        <h2 className="flex-auto text-xl sm:text-3xl max-md:pl-4 xl:text-4xl font-medium">
           {' '}
           SubhMangalPlanning{' '}
-        </div>
+        </h2>
         <button
           type="button"
-          className={`bg-primary p-3 rounded-md fixed right-10 md:hidden z-50 ${
+          className={`bg-primary p-3 rounded-md fixed sm:right-10 right-2 md:hidden z-50 ${
             !show && 'text-gray-900'
           }`}
           onClick={() => setShow(!show)}

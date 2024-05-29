@@ -11,7 +11,7 @@ const AboutUs = () => {
               {' '}
               About our wedding Planning Services{' '}
             </h3>
-            <div className="mt-20 text-base leading-10 text-neutral-700 max-md:mt-10 max-md:max-w-full">
+            <div className="mt-20 text-base h-auto md:leading-10 sm:leading-8 text-neutral-700 max-md:mt-10 max-md:max-w-full">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
               dapibus placerat velit. Donec in porttitor elit. Suspendisse
               accumsan iaculis tincidunt. Lorem ipsum dolor sit amet,

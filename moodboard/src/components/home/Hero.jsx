@@ -15,7 +15,7 @@ const Hero = () => {
 
           <button
             type="button"
-            className="bg-red-900 text-secondary-2 px-4 py-2 w-36 mx-auto md:mx-0"
+            className="bg-red-900 text-secondary-2 px-4 py-2 w-36 "
           >
             Visit Our Site
           </button>
