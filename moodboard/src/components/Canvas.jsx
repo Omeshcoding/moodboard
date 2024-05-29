@@ -42,7 +42,7 @@ const Canvas = ({ images }) => {
       const img = new Image();
       img.src = url;
       img.onload = () => {
-        ctx.drawImage(img, 0, 0, img.width, img.height);
+        ctx.drawImage(img, 0, 0, 100, 100);
       };
     };
 
@@ -70,7 +70,7 @@ const Canvas = ({ images }) => {
         const img = new Image();
         img.src = url;
         img.onload = () => {
-          context.drawImage(img, 0, 0, img.width, img.height);
+          context.drawImage(img, 0, 0, 100, 100);
         };
       });
     }

@@ -16,7 +16,7 @@ const data = [
   },
   {
     title: 'Task Scheduling Tools',
-    url: '/',
+    url: '/rituals_ai',
     image: '/Brief.png',
   },
   {

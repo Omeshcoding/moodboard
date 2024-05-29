@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Home from './components/home/Home';
 import Moodboard from '../pages/Moodboard';
+import RitualsAI from '../pages/RitualsAI';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/moodboard" element={<Moodboard />}></Route>
+          <Route path="/rituals_ai" element={<RitualsAI />}></Route>
         </Routes>
       </BrowserRouter>
 
