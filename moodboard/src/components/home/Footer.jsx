@@ -1,7 +1,3 @@
-import React from 'react';
-
-import Image from 'next/image';
-
 const Footer = () => {
   return (
     <footer className="bg-red-900 text-white  md:px-20 pb-6 mt-8 max-md:text-center ">
@@ -21,7 +17,7 @@ const Footer = () => {
                     <div className="mt-10 max-md:pr-5 max-md:mt-10">
                       <p className="text-xl mb-4 ml-2">Follow us for more !</p>
                       <div className="flex gap-5 max-md:justify-center">
-                        <Image
+                        <img
                           loading="lazy"
                           src="https://cdn.builder.io/api/v1/image/assets/TEMP/6cd0c20aee88bddd40c99c1725afc15ab0fe17ad6186248f1c069cd3f774ef7a?apiKey=26d3383497af445c8a5ef7825b140c3a&"
                           alt="icon_1"
@@ -29,7 +25,7 @@ const Footer = () => {
                           width={35}
                           height={35}
                         />
-                        <Image
+                        <img
                           loading="lazy"
                           src="https://cdn.builder.io/api/v1/image/assets/TEMP/1be85aea4db731204ea6c1f4c2f9b91cf49b2d6dc3e02b106c77ddb9ed406cde?apiKey=26d3383497af445c8a5ef7825b140c3a&"
                           alt="icon_2"
@@ -37,7 +33,7 @@ const Footer = () => {
                           width={35}
                           height={35}
                         />
-                        <Image
+                        <img
                           loading="lazy"
                           src="https://cdn.builder.io/api/v1/image/assets/TEMP/65da70e85678e57b54b8474daf755cf9365ec169a38e76f5d4aa67f2a947acf8?apiKey=26d3383497af445c8a5ef7825b140c3a&"
                           alt="icon_3"
@@ -45,7 +41,7 @@ const Footer = () => {
                           width={35}
                           height={35}
                         />
-                        <Image
+                        <img
                           loading="lazy"
                           src="https://cdn.builder.io/api/v1/image/assets/TEMP/7cf241b0b6e3917691ad9e2f8dbed004ae3e144aa1f9f64beb22d7677bcd5770?apiKey=26d3383497af445c8a5ef7825b140c3a&"
                           alt="icon_4"
@@ -53,7 +49,7 @@ const Footer = () => {
                           width={35}
                           height={35}
                         />
-                        <Image
+                        <img
                           loading="lazy"
                           src="https://cdn.builder.io/api/v1/image/assets/TEMP/889cb0a802f62676bfa75fa62bd60aea75e4191df7552767d245a8bc511757d5?apiKey=26d3383497af445c8a5ef7825b140c3a&"
                           alt="icon_5"
@@ -94,7 +90,7 @@ const Footer = () => {
                   </div>
                 </div>
                 <div className="flex flex-col ml-5 w-[72%] max-md:ml-0 max-md:w-full">
-                  <Image
+                  <img
                     loading="lazy"
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/d8575fd0148f8bd23ff9007fe896841248a177f3e6f8a7b1d05c2aab42a8e3df?apiKey=26d3383497af445c8a5ef7825b140c3a&"
                     alt="ext_48 image"

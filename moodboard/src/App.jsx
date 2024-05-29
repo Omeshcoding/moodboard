@@ -1,12 +1,19 @@
-import './App.css';
-import Canvas from './components/Canvas';
-import CanvasApp from './components/IdeaBoard/CanvasApp';
-import MoodBoard from './components/MoodBoard';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import Home from './components/home/Home';
+import Moodboard from '../pages/Moodboard';
 
 function App() {
   return (
     <>
-      <CanvasApp />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/moodboard" element={<Moodboard />}></Route>
+        </Routes>
+      </BrowserRouter>
+
+      {/* <CanvasApp /> */}
     </>
   );
 }

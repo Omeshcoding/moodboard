@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useRef, useState } from 'react';
-import { Image, Transformer } from 'react-konva';
+import { Image, Rect, Text, Transformer } from 'react-konva';
 
 // eslint-disable-next-line react/prop-types
 const URLImage = ({
@@ -11,11 +11,13 @@ const URLImage = ({
   height,
   isSelected,
   onSelect,
+  votes,
+  onVote,
   onChange,
 }) => {
   const [image, setImage] = useState(null);
   const shapeRef = useRef(null);
-  const trRef = useRef(null);
+  const transformRef = useRef(null);
 
   useEffect(() => {
     const img = new window.Image();
@@ -33,8 +35,8 @@ const URLImage = ({
 
   useEffect(() => {
     if (isSelected) {
-      trRef.current.nodes([shapeRef.current]);
-      trRef.current.getLayer().batchDraw();
+      transformRef.current.nodes([shapeRef.current]);
+      transformRef.current.getLayer().batchDraw();
     }
   }, [isSelected]);
 
@@ -74,8 +76,37 @@ const URLImage = ({
         }}
       />
       {isSelected && (
-        <Transformer ref={trRef} boundBoxFunc={(oldBox, newBox) => newBox} />
+        <Transformer
+          ref={transformRef}
+          boundBoxFunc={(oldBox, newBox) => newBox}
+        />
       )}
+      <Text
+        text={`Votes: ${votes && votes}`}
+        x={x}
+        y={y - 20}
+        fontSize={16}
+        fill="black"
+      />
+      <Rect
+        x={x}
+        y={y + height + 10}
+        width={100}
+        height={30}
+        fill="#eee"
+        cornerRadius={5}
+        onClick={onVote}
+        onTap={onVote}
+      />
+      <Text
+        text="Vote"
+        x={x + 32}
+        y={y + height + 18}
+        fontSize={16}
+        fill="black"
+        onClick={onVote}
+        onTap={onVote}
+      />
     </>
   );
 };

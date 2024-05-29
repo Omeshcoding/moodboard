@@ -1,6 +1,3 @@
-import Image from 'next/image';
-import React from 'react';
-
 const Hero = () => {
   return (
     <>
@@ -18,14 +15,14 @@ const Hero = () => {
 
           <button
             type="button"
-            className="bg-red-900 text-primary-foreground px-4 py-2 w-36 mx-auto md:mx-0"
+            className="bg-red-900 text-secondary-2 px-4 py-2 w-36 mx-auto md:mx-0"
           >
             Visit Our Site
           </button>
         </div>
         <div className="flex flex-col ml-5 w-[60%] max-md:ml-0 max-md:w-full order-1">
           <div className="w-[100%] mx-auto h-full ">
-            <Image
+            <img
               height={1000}
               src="/hero.png"
               width={1000}

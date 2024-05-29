@@ -1,8 +1,7 @@
 import { ArrowRight } from 'lucide-react';
-import Image from 'next/image';
-import React from 'react';
-import ServiceCard from '../ServiceCard';
-import Link from 'next/link';
+
+import ServiceCard from './ServiceCard';
+import { Link } from 'react-router-dom';
 
 const data = [
   {
@@ -22,7 +21,7 @@ const data = [
   },
   {
     title: 'Personalized Mood Boards',
-    url: '/',
+    url: '/moodboard',
     image: '/Ballroom Dance.png',
   },
   {
@@ -63,7 +62,7 @@ const Services = () => {
               maxime nobis saepe eum dolorem.
             </p>
             <Link
-              href="/"
+              to="/"
               className="grow hover:underline flex items-center hover:gap-1 transition-all duration-300 uppercase mt-5 font-extrabold"
             >
               see more

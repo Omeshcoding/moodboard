@@ -2,22 +2,7 @@ import { Layer, Stage } from 'react-konva';
 import URLImage from './URLImage';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { io } from 'socket.io-client';
-// {
-//      src: 'https://konvajs.org/assets/yoda.jpg',
-//      x: 150,
-//      y: 100,
-//      id: 'yoda',
-//      width: 100,
-//      height: 100,
-//    },
-//    {
-//      src: 'https://konvajs.org/assets/lion.png',
-//      x: 100,
-//      y: 150,
-//      id: 'lion',
-//      width: 100,
-//      height: 100,
-//    },
+
 const CanvasApp = () => {
   const [images, setImages] = useState([]);
   const [selectedId, selectShape] = useState(null);
@@ -26,6 +11,7 @@ const CanvasApp = () => {
   const [isDraggingImage, setIsDraggingImage] = useState(false);
   const stageRef = useRef(null);
   const socketRef = useRef(null);
+  const fileInputRef = useRef(null);
 
   const handleDrop = useCallback(
     (e) => {
@@ -45,12 +31,12 @@ const CanvasApp = () => {
           id: `img${images.length + 1}`,
           width: 100,
           height: 100,
+          votes: 0,
         };
 
         const updatedImages = [...images, newImage];
         setImages(updatedImages);
         socketRef.current.emit('updatedImages', updatedImages);
-        console.log(updatedImages);
       };
       reader.readAsDataURL(file);
     },
@@ -102,6 +88,36 @@ const CanvasApp = () => {
     setIsDraggingImage(false);
   };
 
+  const handleImageUpload = (e) => {
+    const stage = stageRef.current;
+    const files = e.target.files;
+    const file = files[0];
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      const newImage = {
+        src: reader.result,
+        x: stage.getPointerPosition()?.x || window.innerWidth / 2,
+        y: stage.getPointerPosition()?.y || window.innerWidth / 2,
+        id: `img${images.length + 1}`,
+        width: 100,
+        height: 100,
+      };
+
+      const updatedImages = [...images, newImage];
+      setImages(updatedImages);
+      socketRef.current.emit('updatedImages', updatedImages);
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const handleVote = (id) => {
+    const updatedImages = images.map((image) => {
+      return image.id === id ? { ...image, votes: image.votes + 1 } : image;
+    });
+    setImages(updatedImages);
+    socketRef.current.emit('updateImages', updatedImages);
+  };
   useEffect(() => {
     const handleStageClick = (e) => {
       const clickedOnEmpty = e.target === e.target.getStage();
@@ -166,7 +182,6 @@ const CanvasApp = () => {
     });
 
     socketRef.current.on('updateImages', (updatedImages) => {
-      console.log(updatedImages);
       setImages(updatedImages);
     });
 
@@ -174,13 +189,36 @@ const CanvasApp = () => {
       socketRef.current.disconnect();
     };
   }, []);
-  console.log(images);
+
   return (
     <div
       onDrop={handleDrop}
       onDragOver={handleDragOver}
-      style={{ width: '100%', height: '100vh', border: '1px solid black' }}
+      className="w-[100vw] md:border-2 md:border-red-900 h-[100vh]"
     >
+      <div className="">
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept="image/*"
+          style={{ display: 'none' }}
+          onChange={handleImageUpload}
+        />
+        <button
+          onClick={() => fileInputRef.current.click()}
+          className="fixed rounded-md top-10 text-red-900 font-semibold border-black border-2"
+          style={{
+            position: 'absolute',
+            top: 10,
+            left: 10,
+            zIndex: 10,
+            padding: '10px 20px',
+            fontSize: '16px',
+          }}
+        >
+          Add Image
+        </button>
+      </div>
       <Stage
         width={window.innerWidth}
         height={window.innerHeight}
@@ -195,17 +233,19 @@ const CanvasApp = () => {
         <Layer>
           {images.map((image) => (
             <URLImage
-              key={image.id}
-              src={image.src}
-              x={image.x}
-              y={image.y}
-              width={image.width}
-              height={image.height}
-              isSelected={selectedId === image.id}
+              key={image?.id}
+              src={image?.src}
+              x={image?.x}
+              y={image?.y}
+              width={image?.width}
+              height={image?.height}
+              isSelected={selectedId === image?.id}
+              votes={image?.votes}
               onSelect={() => handleSelect(image.id)}
               onChange={(newAttrs) => handleChange(image.id, newAttrs)}
               onDragStart={handleImageDragStart}
               onDragEnd={handleImageDragEnd}
+              onVote={() => handleVote(image.id)}
             />
           ))}
         </Layer>

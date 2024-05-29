@@ -1,6 +1,3 @@
-import Image from 'next/image';
-import React from 'react';
-
 const ServiceReview = () => {
   return (
     <section
@@ -21,21 +18,21 @@ const ServiceReview = () => {
         <div className=" mb-20">
           <div>
             <div className="relative">
-              <Image
+              <img
                 src="/review1.png"
                 alt="review1"
                 height={391}
                 width={262}
                 className="z-20 relative"
               />
-              {/* <Image /> */}
+              {/* <img /> */}
               <div className=" z-30 md:absolute top-8 left-48 w-[380px] h-full md:h-[266px] bg-white flex flex-col grow px-12 py-8 mt-1.5 gap-4  text-left shadow-lg max-md:px-5  max-md:max-w-full  ">
                 <h4 className="text-2xl font-bold">Garima</h4>
                 <div className="flex">
                   {Array(5)
                     .fill(1)
                     .map((_, index) => (
-                      <Image
+                      <img
                         key={index}
                         src="/star.png"
                         alt="rectangle"
@@ -52,7 +49,7 @@ const ServiceReview = () => {
                   officiis nihil!
                 </p>
               </div>
-              <Image
+              <img
                 src="/rectangle.png"
                 alt="rectangle"
                 height={380}
@@ -65,7 +62,7 @@ const ServiceReview = () => {
         <div>
           <div>
             <div className="relative">
-              <Image
+              <img
                 src="/review2.png"
                 alt="review2"
                 height={391}
@@ -79,7 +76,7 @@ const ServiceReview = () => {
                   {Array(5)
                     .fill(1)
                     .map((_, index) => (
-                      <Image
+                      <img
                         key={index}
                         src="/star.png"
                         alt="rectangle"
@@ -96,7 +93,7 @@ const ServiceReview = () => {
                   officiis nihil!
                 </p>
               </div>
-              <Image
+              <img
                 src="/rectangle.png"
                 alt="rectangle"
                 height={380}

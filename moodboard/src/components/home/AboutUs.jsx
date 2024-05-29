@@ -1,6 +1,3 @@
-import Image from 'next/image';
-import React from 'react';
-
 const AboutUs = () => {
   return (
     <section
@@ -27,7 +24,7 @@ const AboutUs = () => {
           </div>
         </div>
         <div className="flex relative   w-[950px] ml-auto max-md:ml-0 max-md:w-full h-[500px] md:h-[700px] py-6">
-          <Image
+          <img
             loading="lazy"
             src="/aboutus2.png"
             alt="ext_51 image"
@@ -35,7 +32,7 @@ const AboutUs = () => {
             width={880}
             height={180}
           />
-          <Image
+          <img
             loading="lazy"
             src="/aboutus3.png"
             alt="ext_51 image"
@@ -43,7 +40,7 @@ const AboutUs = () => {
             width={180}
             height={180}
           />
-          <Image
+          <img
             loading="lazy"
             src="/aboutus1.png"
             alt="ext_51 image"
