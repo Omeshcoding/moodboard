@@ -37,7 +37,7 @@ const VendorDirectory = () => {
         {vendorData.map((item, index) => {
           return (
             <div
-              className="relative bg-white gap-2 flex flex-col  drop-shadow-md max-md:w-[100%]  max-lg:w-[51%] w-[31%] px-4 py-6 rounded-md"
+              className="relative bg-[#D6D5C9] gap-2 flex flex-col  drop-shadow-md max-md:w-[100%]  max-lg:w-[51%] w-[31%] px-4 py-6 rounded-md"
               key={index}
             >
               <p className="title font-bold">{item.title} </p>

@@ -24,7 +24,7 @@ const ChannelCard = () => {
         {channelData.map((item, index) => {
           return (
             <div
-              className="bg-white drop-shadow-md max-md:w-[100%] w-[48%] px-4 py-6 rounded-md"
+              className="bg-[#D6D5C9] drop-shadow-md max-md:w-[100%] w-[48%] px-4 py-6 rounded-md"
               key={index}
             >
               <p className="title font-bold">{item.title} </p>

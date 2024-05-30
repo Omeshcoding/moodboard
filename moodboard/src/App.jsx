@@ -7,6 +7,7 @@ import Login from '../pages/Login';
 import OnBoarding from '../pages/OnBoarding';
 import CreateProfile from '../pages/CreateProfile';
 import DashBoard from '../pages/DashBoard';
+import Chat from './components/Chat/Chat';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/onboarding" element={<OnBoarding />}></Route>
           <Route path="/createprofile" element={<CreateProfile />}></Route>
           <Route path="/dashboard" element={<DashBoard />}></Route>
+          <Route path="/chat" element={<Chat />}></Route>
           <Route path="/login" element={<Login />}></Route>
         </Routes>
       </BrowserRouter>

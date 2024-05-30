@@ -18,7 +18,7 @@ const DashBoard = () => {
     <SquareUserRound size={32} />,
   ];
   return (
-    <section className="bg-zinc-900 h-[100%]">
+    <section className="bg-gradient-to-tr  to-red-800 from-[#DC897C] self-stretch  h-[100%]">
       <Navbar navlinks={navlinks} />
       <Overview />
       <ChannelCard />
