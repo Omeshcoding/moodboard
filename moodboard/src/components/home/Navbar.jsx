@@ -38,7 +38,7 @@ const Navbar = () => {
           )}
         </div>
         <div
-          className={`fixed pt-20 flex flex-col top-0 shadow-md right-0 w-[250px] p-4 h-[250px] text-center bg-red-900  lg:text-lg font-semibold uppercase  md:hidden ${
+          className={`fixed pt-20 flex flex-col top-0 shadow-md right-0 w-[250px] p-4 pb-20  text-center bg-red-900  lg:text-lg font-semibold uppercase  md:hidden ${
             show ? 'translate-x-0' : 'translate-x-[100%]'
           } transition-all duration-300`}
         >
@@ -47,7 +47,7 @@ const Navbar = () => {
               return (
                 <Link
                   to="#"
-                  className="grow hover:underline mt-2 transition-all duration-300"
+                  className="grow hover:underline my-2 transition-all duration-300 "
                   key={index}
                 >
                   {item}

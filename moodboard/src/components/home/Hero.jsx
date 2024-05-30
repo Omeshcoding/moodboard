@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Hero = () => {
   return (
     <>
@@ -5,7 +7,12 @@ const Hero = () => {
         <div className="flex flex-col gap-10 lg:gap-20 md:w-[40%] md:mt-10 pl-14 pr-4 md:pl-0">
           <h1 className=" xl:text-6xl  font-bold text-primary  xl:leading-[75px] max-md:max-w-full text-4xl  md:text-5xl md:leading-[63px] max-w-[500px] lg:max-w-[600px] max-sm:leading-[50px] ">
             Plan Your <br></br>{' '}
-            <span className="text-red-900"> Dream Wedding</span> With Us
+            <span className="relative text-red-900 z-20">
+              {' '}
+              Dream Wedding
+              <small className="absolute bg-red-400/20 left-0 bottom-[4px]  z-0 h-4 w-full" />
+            </span>{' '}
+            With Us
           </h1>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil
@@ -13,12 +20,14 @@ const Hero = () => {
             accusantium dolorum asperiores temporibus provident illum fuga
           </p>
 
-          <button
-            type="button"
-            className="bg-red-900 text-secondary-2 px-4 py-2 w-36 "
-          >
-            Visit Our Site
-          </button>
+          <Link to="/onboarding">
+            <button
+              type="button"
+              className="relative z-20 bg-red-900 text-secondary-2 px-4 py-2 w-36 "
+            >
+              Visit Our Site
+            </button>
+          </Link>
         </div>
         <div className="flex flex-col ml-5 w-[60%] max-md:ml-0 max-md:w-full order-1">
           <div className="w-[100%] mx-auto h-full ">

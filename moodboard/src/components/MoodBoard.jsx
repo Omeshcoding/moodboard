@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Canvas from './Canvas';
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:4000'); // Ensure this matches your server's address
+const socket = io('http://localhost:4000');
 
 const MoodBoard = () => {
   const [images, setImages] = useState([]);

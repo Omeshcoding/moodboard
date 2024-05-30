@@ -6,8 +6,8 @@ const ServiceCard = ({ src, title, url }) => {
   console.log(url);
   return (
     <div className="flex flex-col w-[300px] max-md:ml-0 max-md:w-full text-center">
-      <div className="flex flex-col justify-between grow items-center px-2 pt-2 pb-9 mx-auto w-full bg-white border-black border-solid shadow-lg border-[3px] max-md:mt-8">
-        <div className="flex justify-center items-center self-stretch px-16 py-6 bg-red-900 max-md:px-5">
+      <div className="flex flex-col justify-between grow items-center px-2 pt-2 pb-9 mx-auto w-full bg-white border-black border-solid shadow-lg border-[3px] max-md:mt-8 rounded-3xl">
+        <div className="flex justify-center items-center self-stretch px-16 py-6 bg-red-900 rounded-tr-3xl rounded-tl-3xl max-md:px-5">
           {' '}
           <img
             loading="lazy"

@@ -61,7 +61,6 @@ const CanvasApp = () => {
   const handleWheel = (e) => {
     if (isDraggingImage) return;
 
-    console.log(e.evt);
     e.evt.preventDefault();
     const stage = stageRef.current;
     const oldScale = stage.scaleX();
@@ -129,7 +128,6 @@ const CanvasApp = () => {
     const handleStageDblClick = () => {
       if (images.length === 0) return;
 
-      // Calculate the bounding box of all images
       const minX = Math.min(...images.map((img) => img.x));
       const minY = Math.min(...images.map((img) => img.y));
       const maxX = Math.max(...images.map((img) => img.x + img.width));
@@ -138,13 +136,11 @@ const CanvasApp = () => {
       const boxWidth = maxX - minX;
       const boxHeight = maxY - minY;
 
-      // Calculate the new scale to fit the images
       const stage = stageRef.current;
       const scaleX = stage.width() / boxWidth;
       const scaleY = stage.height() / boxHeight;
-      const newScale = Math.min(scaleX, scaleY) * 0.8; // Leave some margin
+      const newScale = Math.min(scaleX, scaleY) * 0.8;
 
-      // Center the stage on the images
       const newPos = {
         x: -(minX + boxWidth / 2) * newScale + stage.width() / 2,
         y: -(minY + boxHeight / 2) * newScale + stage.height() / 2,

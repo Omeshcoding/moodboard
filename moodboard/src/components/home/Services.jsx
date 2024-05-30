@@ -48,9 +48,9 @@ const data = [
 
 const Services = () => {
   return (
-    <section className="mb-28">
-      <div className="px-5 mt-28 w-full max-w-[1440px] max-md:mt-10 max-md:max-w-full">
-        <div className="flex justify-between my-8 md:mb-24  text-base md:px-14 flex-col md:flex-row    text-neutral-800 items-start ">
+    <section className=" mb-28">
+      <div className="px-5 mt-28 w-full  max-md:mt-10 max-md:max-w-full ">
+        <div className="flex justify-between my-8 md:mb-24  text-base md:p-14 lg:px-28 flex-col md:flex-row    text-neutral-800 items-start ">
           <h2 className="  font-extrabold text-primary  xl:leading-[75px] max-md:max-w-full text-4xl  md:text-5xl md:leading-[63px] max-w-[500px] lg:max-w-[600px] max-sm:leading-[50px]">
             What we serve to you <br></br> for your{' '}
             <span className="text-red-900">Best Wedding</span>
