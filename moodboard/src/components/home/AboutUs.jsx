@@ -23,7 +23,7 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-        <div className="flex relative   w-[950px] ml-auto max-md:ml-0 max-md:w-full h-[500px] md:h-[700px] py-6">
+        <div className="flex relative   w-[950px] ml-auto max-md:ml-0 max-md:w-full h-[500px] md:h-[700px] py-6 overflow-hidden">
           <img
             loading="lazy"
             src="/aboutus2.png"

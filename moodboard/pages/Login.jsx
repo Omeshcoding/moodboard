@@ -29,9 +29,9 @@ const Login = () => {
           <Link to="/createprofile">
             <button className="links_btn_full">sign in </button>
           </Link>
-          <div className="sign_up_container">
+          <div className="sign_up_container ">
             <Link to="#">
-              <button className="sign-up_with_btn">
+              <button className="bg-green-200 sign-up_with_btn">
                 <FaGoogle />{' '}
               </button>
             </Link>

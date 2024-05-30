@@ -1,6 +1,8 @@
+import Copyright from '../Copyright';
+
 const Footer = () => {
   return (
-    <footer className="bg-red-900 text-white  md:px-20 pb-6 mt-8 max-md:text-center ">
+    <footer className="bg-[#770C15] text-white  md:px-20 pb-6 mt-8 max-md:text-center pt-8">
       <div className="mt-20 max-md:mt-10 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
@@ -79,7 +81,7 @@ const Footer = () => {
               <div className="flex gap-5 max-md:flex-col max-md:gap-0">
                 <div className="flex flex-col w-[28%] max-md:ml-0 max-md:w-full">
                   <div className="flex flex-col self-stretch my-auto text-xl max-md:mt-10">
-                    <h5 className="text-2xl font-bold  capitalize md:mt-12 ">
+                    <h5 className="text-2xl font-bold  capitalize md:mt-7 ">
                       {' '}
                       Services{' '}
                     </h5>
@@ -105,9 +107,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="shrink-0 mt-20 border-solid bg-stone-300 border-[3px] border-stone-300 h-[3px] max-md:mt-10 max-md:max-w-full" />
-      <h6 className="mt-10 text-2xl font-extrabold  max-md:mt-10 max-md:max-w-full text-center">
-        Copyright © 2023, All Right Reserved.
-      </h6>
+      <Copyright />
     </footer>
   );
 };
