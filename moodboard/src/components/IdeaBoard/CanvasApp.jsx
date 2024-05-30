@@ -202,10 +202,10 @@ const CanvasApp = () => {
         />
         <button
           onClick={() => fileInputRef.current.click()}
-          className="fixed rounded-md top-10 text-red-900 font-semibold border-black border-2"
+          className="fixed left-10 py-1 px-4  cursor-pointer rounded-md top-10 text-red-900 font-semibold border-black border-2 hover:text-red-600 hover:border-red-600 hover:border-4 transition-all duration-600 ease-in-out"
           style={{
             position: 'absolute',
-            top: 10,
+            top: 40,
             left: 10,
             zIndex: 10,
             padding: '10px 20px',

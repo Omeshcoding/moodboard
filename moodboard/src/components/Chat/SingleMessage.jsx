@@ -5,8 +5,8 @@ const SingleMessage = ({ title, desc, time, notification }) => {
       <div className="flex flex-wrap  justify-center sm:justify-start items-center">
         <img
           src="/Avatar.png"
-          height={100}
-          width={108}
+          height={80}
+          width={70}
           alt="profileimage"
           className=" rounded-full border-2 border-darkerGray"
         />
@@ -17,12 +17,16 @@ const SingleMessage = ({ title, desc, time, notification }) => {
       </div>
       <div className="flex flex-col h-20">
         {notification > 0 && (
-          <p className="   w-8 h-8 text-center pt-1 mx-auto my-2   bg-[#FF3742] text-white rounded-full">
+          <p className="   w-8 h-8 text-center pt-1 mx-auto mb-2   bg-[#FF3742] text-white rounded-full">
             {notification}
           </p>
         )}
 
-        <p className=" py-1 px-4 rounded-sm flex flex-end items-end gap-1 text-darkerGray">
+        <p
+          className={`py-1 px-4 rounded-sm flex flex-end items-end gap-1 text-darkerGray  ${
+            notification < 1 && 'mt-12'
+          }`}
+        >
           {time}
         </p>
       </div>
