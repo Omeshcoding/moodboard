@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 const SingleMessage = ({ title, desc, time, notification }) => {
   return (
-    <div className="relative flex justify-center  sm:justify-between  p-6 bg-white text-gray-500 my-2 md:my-4 rounded-md sm:items-center flex-wrap gap-4 hover:bg-[#DBDDE1]">
+    <div className="relative flex justify-center  sm:justify-between  p-6 bg-white text-gray-500 hover:text-black my-2 md:my-4 rounded-md sm:items-center flex-wrap gap-4 hover:bg-[#DBDDE1]">
       <div className="flex flex-wrap  justify-center sm:justify-start items-center">
         <img
           src="/Avatar.png"
