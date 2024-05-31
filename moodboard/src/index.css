@@ -26,9 +26,9 @@ h5,
 h6 {
   font-family: 'Playfair Display', serif;
 }
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   display: none;
-} */
+}
 /* Onboarding */
 .onboarding {
   @apply flex flex-col items-center justify-center h-[900px] sm:h-[100vh]  bg-gradient-to-bl to-[#770C15] from-[#F9AFAF] text-xl self-stretch text-white gap-6;

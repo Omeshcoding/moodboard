@@ -1,11 +1,11 @@
-import Navbar from '../src/components/home/Navbar';
+import Navbar from '../components/home/Navbar';
 import { SquareUserRound } from 'lucide-react';
-import Overview from '../src/components/dashboard/Overview';
-import ChannelCard from '../src/components/dashboard/ChannelCard';
-import VendorDirectory from '../src/components/dashboard/VendorDirectory';
-import RitualsInfo from '../src/components/dashboard/RitualsInfo';
-import Moodboard from '../src/components/dashboard/Moodboard';
-import Copyright from '../src/components/Copyright';
+import Overview from '../components/dashboard/Overview';
+import ChannelCard from '../components/dashboard/ChannelCard';
+import VendorDirectory from '../components/dashboard/VendorDirectory';
+import RitualsInfo from '../components/dashboard/RitualsInfo';
+import Moodboard from '../components/dashboard/Moodboard';
+import Copyright from '../components/Copyright';
 
 const DashBoard = () => {
   const navlinks = [

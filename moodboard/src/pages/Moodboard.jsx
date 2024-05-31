@@ -1,4 +1,4 @@
-import CanvasApp from '../src/components/IdeaBoard/CanvasApp';
+import CanvasApp from '../components/IdeaBoard/CanvasApp';
 
 const Moodboard = () => {
   return (

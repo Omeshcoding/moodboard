@@ -1,16 +1,26 @@
 /* eslint-disable react/prop-types */
-const Sender = ({ imgUrl, message, caption, senderImg, senderProfileImg }) => {
+const Sender = ({
+  imgUrl,
+  message,
+  caption,
+  senderImg,
+  senderProfileImg,
+  timeStyle,
+  userImg,
+}) => {
   return (
     <div className="flex gap-4 w-[50%] ml-auto e justify-end h-auto  px-6 py-2">
-      <div className="flex flex-wrap  justify-center sm:justify-start items-center w-20">
-        <img
-          src="/Avatar.png"
-          height={80}
-          width={70}
-          alt="profileimage"
-          className=" rounded-full border-2 border-darkerGray"
-        />
-      </div>
+      {userImg && (
+        <div className="flex flex-wrap  justify-center sm:justify-start items-center w-20">
+          <img
+            src={userImg}
+            height={80}
+            width={70}
+            alt="profileimage"
+            className=" rounded-full border-2 border-darkerGray"
+          />
+        </div>
+      )}
       <div className="">
         <div className=" bg-[#E9EAED] w-fit h-auto rounded-3xl  rounded-bl-sm">
           {imgUrl && (
@@ -55,9 +65,16 @@ const Sender = ({ imgUrl, message, caption, senderImg, senderProfileImg }) => {
             <>{message && <p className="px-4 py-3">{message}</p>}</>
           )}
         </div>
-        <p className="text-[#747881] text-left">
+        <p
+          className={`${
+            timeStyle ? 'text-black' : 'text-[#747881]'
+          } text-left `}
+        >
           {' '}
-          <span className="font-bold"> Moon Boots</span> 9:02 PM
+          <span className="font-bold mt-1">
+            {!timeStyle && ' Moon Boots'}
+          </span>{' '}
+          9:02 PM
         </p>
       </div>
     </div>

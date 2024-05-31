@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const data = [
   {
     title: 'Common Communication Channels',
-    url: '/',
+    url: '/chat',
     image: '/Chat.png',
   },
   {
@@ -36,7 +36,7 @@ const data = [
   },
   {
     title: 'Astrology Bot',
-    url: '/',
+    url: '/ritualsai',
     image: '/astro.png',
   },
   {

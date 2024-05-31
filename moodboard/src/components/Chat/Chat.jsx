@@ -35,7 +35,7 @@ const Chat = () => {
 
   return (
     <article className="    text-center h-[100vh] w-full flex overflow-y-scroll">
-      <aside className=" w-[40%] h-[100vh] overflow-y-scroll pt-4 px-4 flex flex-col gap-8 text-white ">
+      <aside className=" w-[40%] h-[100vh] overflow-y-scroll pt-4 px-4 flex flex-col gap-8 text-white border-r-gray-400 border-2">
         <div className=" flex h-12 gap-4 w-full">
           <span className="mt-2">
             <X color="gray" size="2rem" />{' '}
@@ -78,12 +78,16 @@ const Chat = () => {
         </div>
         <div className="mt-28 overflow-y-scroll h-[80vh]">
           <Receiver
+            userImg="/Avatar.png"
             message="Who was that philosopher you
 shared with me recently?"
           />
           <Sender message="Roland Barthes" />
-          <Receiver message="That’s him!" />
-          <Receiver message="What was his vision statement?" />
+          <Receiver userImg="/Avatar.png" message="That’s him!" />
+          <Receiver
+            userImg="/Avatar.png"
+            message="What was his vision statement?"
+          />
           <Sender
             message="“Ultimately in order to see a
 photograph well, it is best to
@@ -94,21 +98,26 @@ look away or close your eyes.”"
             message="Aerial photograph from the Helsinki urban environment division."
           />
           <Receiver
+            userImg="/Avatar.png"
             senderImg="/Aerial.png"
             senderProfileImg="/Avatar.png"
             message="Aerial photograph from the Helsinki urban environment division"
             caption="Check this https://dribbble.com"
           />
-          <Receiver imgUrl="./Martian.png" />
+          <Receiver userImg="/Avatar.png" imgUrl="./Martian.png" />
         </div>
         <div className=" fixed bottom-0 h-20 w-[60%] bg-white py-2 gap-3 px-4 items-center flex ">
           <Plus size="2.4rem" color="gray" strokeWidth={2} />
-          <input
-            type="text"
-            placeholder="Type your message"
-            className="mx-auto w-[80%] h-14 text-lg border-2 border-[#E9EAED] rounded-full px-8"
-          />
-          <Smile size="2rem" color="gray" />
+          <div className="relative w-[100%] ">
+            <input
+              type="text"
+              placeholder="Type your message"
+              className="mx-auto w-[80%] h-14 text-lg border-2 border-[#E9EAED] rounded-full px-8"
+            />
+            <span className="absolute right-28 top-3">
+              <Smile size="2rem" color="gray" />
+            </span>
+          </div>
           <span className="bg-[#B4B7BB] rounded-full p-3">
             <IoSend
               size={34}

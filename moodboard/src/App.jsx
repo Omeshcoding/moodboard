@@ -1,13 +1,14 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import Home from '../pages/Home';
-import Moodboard from '../pages/Moodboard';
-import RitualsAI from '../pages/RitualsAI';
-import Login from '../pages/Login';
-import OnBoarding from '../pages/OnBoarding';
-import CreateProfile from '../pages/CreateProfile';
-import DashBoard from '../pages/DashBoard';
+import Home from '../src/pages/Home';
+import Moodboard from '../src/pages/Moodboard';
+import RitualsAI from '../src/pages/RitualsAI';
+import Login from '../src/pages/Login';
+import OnBoarding from '../src/pages/OnBoarding';
+import CreateProfile from '../src/pages/CreateProfile';
+import DashBoard from '../src/pages/DashBoard';
 import Chat from './components/Chat/Chat';
+import PlanGround from '../src/pages/PlanGround';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/moodboard" element={<Moodboard />}></Route>
-          <Route path="/rituals_ai" element={<RitualsAI />}></Route>
+          <Route path="/ritualsai" element={<RitualsAI />}></Route>
+          <Route path="/planground" element={<PlanGround />}></Route>
 
           <Route path="/onboarding" element={<OnBoarding />}></Route>
           <Route path="/createprofile" element={<CreateProfile />}></Route>
