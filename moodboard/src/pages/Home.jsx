@@ -26,7 +26,7 @@ const Home = () => {
       link: '/#reviews',
     },
     {
-      name: 'Contact',
+      name: 'CONTACT',
       link: '/#footer',
     },
   ];

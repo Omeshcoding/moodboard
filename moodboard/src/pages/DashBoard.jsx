@@ -35,7 +35,7 @@ const DashBoard = () => {
     },
   ];
   return (
-    <section className="bg-gradient-to-tr  to-red-800 from-[#DC897C] self-stretch  h-[100%] overflow-hidden">
+    <section className="bg-gradient-to-t  to-red-800 from-[#DC897C] self-stretch  h-[100%] overflow-hidden">
       <Navbar navlinks={navlinks} />
       <Overview />
       <ChannelCard />
