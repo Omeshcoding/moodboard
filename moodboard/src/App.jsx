@@ -20,11 +20,7 @@ function App() {
           <Route path="/moodboard" element={<Moodboard />}></Route>
           <Route path="/ritualsai" element={<RitualsAI />}></Route>
           <Route path="/planground" element={<PlanGround />}></Route>
-          <Route
-            path="/taskallocation
-          "
-            element={<IntegrateWhatsapp />}
-          ></Route>
+          <Route path="/integratewp" element={<IntegrateWhatsapp />}></Route>
           <Route
             path="/integratewp
           "

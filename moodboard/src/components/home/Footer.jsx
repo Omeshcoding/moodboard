@@ -18,18 +18,18 @@ const Footer = () => {
                     </div>
                     <div className="mt-10 max-md:pr-5 max-md:mt-10">
                       <p className="text-xl mb-4 ml-2">Follow us for more !</p>
-                      <div className="flex gap-5 max-md:justify-center">
+                      <div className="flex gap-5 max-md:justify-center text-white">
                         <img
                           loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/6cd0c20aee88bddd40c99c1725afc15ab0fe17ad6186248f1c069cd3f774ef7a?apiKey=26d3383497af445c8a5ef7825b140c3a&"
+                          src="/Facebook.svg"
                           alt="icon_1"
-                          className="shrink-0 aspect-square w-[35px]"
+                          className="shrink-0 aspect-square w-[35px] "
                           width={35}
                           height={35}
                         />
                         <img
                           loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/1be85aea4db731204ea6c1f4c2f9b91cf49b2d6dc3e02b106c77ddb9ed406cde?apiKey=26d3383497af445c8a5ef7825b140c3a&"
+                          src="Instagram.svg"
                           alt="icon_2"
                           className="shrink-0 aspect-square w-[35px]"
                           width={35}
@@ -37,7 +37,7 @@ const Footer = () => {
                         />
                         <img
                           loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/65da70e85678e57b54b8474daf755cf9365ec169a38e76f5d4aa67f2a947acf8?apiKey=26d3383497af445c8a5ef7825b140c3a&"
+                          src="Tik tok.svg"
                           alt="icon_3"
                           className="shrink-0 aspect-square w-[35px]"
                           width={35}
@@ -45,7 +45,7 @@ const Footer = () => {
                         />
                         <img
                           loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/7cf241b0b6e3917691ad9e2f8dbed004ae3e144aa1f9f64beb22d7677bcd5770?apiKey=26d3383497af445c8a5ef7825b140c3a&"
+                          src="/Youtube.svg"
                           alt="icon_4"
                           className="shrink-0 aspect-square w-[35px]"
                           width={35}
@@ -53,7 +53,7 @@ const Footer = () => {
                         />
                         <img
                           loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/889cb0a802f62676bfa75fa62bd60aea75e4191df7552767d245a8bc511757d5?apiKey=26d3383497af445c8a5ef7825b140c3a&"
+                          src="Twitter.svg"
                           alt="icon_5"
                           className="shrink-0 aspect-square w-[35px]"
                           width={35}
@@ -81,7 +81,7 @@ const Footer = () => {
               <div className="flex gap-5 max-md:flex-col max-md:gap-0">
                 <div className="flex flex-col w-[28%] max-md:ml-0 max-md:w-full">
                   <div className="flex flex-col self-stretch my-auto text-xl max-md:mt-10">
-                    <h5 className="text-2xl font-bold  capitalize md:mt-7 ">
+                    <h5 className="text-2xl font-bold  capitalize md:mt-12 ">
                       {' '}
                       Services{' '}
                     </h5>
@@ -94,7 +94,7 @@ const Footer = () => {
                 <div className="flex flex-col ml-5 w-[72%] max-md:ml-0 max-md:w-full">
                   <img
                     loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/d8575fd0148f8bd23ff9007fe896841248a177f3e6f8a7b1d05c2aab42a8e3df?apiKey=26d3383497af445c8a5ef7825b140c3a&"
+                    src="map.png"
                     alt="ext_48 image"
                     className="grow w-full aspect-[1.16] max-md:mt-10"
                     width={1200}
