@@ -9,7 +9,7 @@ const Navbar = ({ navlinks }) => {
   const [show, setShow] = useState(false);
 
   return (
-    <nav className="flex justify-center items-center self-stretch md:px-16 py-7 w-full text-white bg-red-900 max-md:px-1 max-md:max-w-full">
+    <nav className="flex justify-center items-center self-stretch md:px-16 py-7 w-full text-white bg-red-900 max-md:px-1 max-md:max-w-full drop-shadow-sm">
       <div className=" relative flex justify-between items-center gap-5 w-full max-w-[1600px] max-md:flex-wrap ">
         <Logo />
         <button

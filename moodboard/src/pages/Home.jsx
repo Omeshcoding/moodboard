@@ -10,14 +10,14 @@ import ServiceReview from '../components/home/ServiceReview';
 const Home = () => {
   const navlinks = ['HOME', 'ABOUT US', 'SERVICES', 'GALLERY', 'CONTACT'];
   return (
-    <>
+    <main className="overflow-hidden">
       <Navbar navlinks={navlinks} />
       <Hero />
       <AboutUs />
       <Services />
       <ServiceReview />
       <Footer />
-    </>
+    </main>
   );
 };
 

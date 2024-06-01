@@ -10,6 +10,7 @@ import DashBoard from '../src/pages/DashBoard';
 import Chat from './components/Chat/Chat';
 import PlanGround from '../src/pages/PlanGround';
 import IntegrateWhatsapp from './pages/IntegrateWhatsapp';
+import TaskAllocation from './pages/TaskAllocation';
 
 function App() {
   return (
@@ -21,11 +22,7 @@ function App() {
           <Route path="/ritualsai" element={<RitualsAI />}></Route>
           <Route path="/planground" element={<PlanGround />}></Route>
           <Route path="/integratewp" element={<IntegrateWhatsapp />}></Route>
-          <Route
-            path="/integratewp
-          "
-            element={<IntegrateWhatsapp />}
-          ></Route>
+          <Route path="/taskallocation" element={<TaskAllocation />}></Route>
 
           <Route path="/onboarding" element={<OnBoarding />}></Route>
           <Route path="/createprofile" element={<CreateProfile />}></Route>
