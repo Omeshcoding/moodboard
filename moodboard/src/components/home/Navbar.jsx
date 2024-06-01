@@ -14,39 +14,39 @@ const Navbar = ({ navlinks }) => {
         <Logo />
         <button
           type="button"
-          className={`bg-primary p-3 rounded-md fixed sm:right-10 right-2 md:hidden z-50 ${
+          className={`fixed bg-[#770C15] p-3 rounded-md  sm:right-10 right-2 md:hidden z-50 ${
             !show && 'text-gray-900'
           }`}
           onClick={() => setShow(!show)}
         >
-          {!show ? <Menu color="#ede8e8" /> : <X />}
+          {!show ? <Menu color="#ede8e8" /> : <X color="#ede8e8" />}
         </button>
         <div className="hidden md:flex gap-5 my-auto lg:text-lg font-semibold  max-md:flex-wrap  ">
           {navlinks.map((item, index) => {
             return (
               <Link
-                to="#"
+                to={item.link}
                 className="grow hover:underline mt-2 transition-all duration-300"
                 key={index}
               >
-                {item}
+                {item.name}
               </Link>
             );
           })}
         </div>
         <div
-          className={`fixed pt-20 flex flex-col top-0 shadow-md right-0 w-[250px] p-4 pb-20  text-center bg-red-900  lg:text-lg font-semibold   md:hidden ${
+          className={`z-40   fixed pt-20 flex flex-col items-center drop-shadow-md  top-0 shadow-md right-0 w-[250px] p-4 pb-10  text-center bg-red-900  lg:text-lg font-semibold   md:hidden ${
             show ? 'translate-x-0' : 'translate-x-[100%]'
           } transition-all duration-300`}
         >
           {navlinks.map((item, index) => {
             return (
               <Link
-                to="#"
+                to={item.link}
                 className="grow hover:underline my-2 transition-all duration-300 "
                 key={index}
               >
-                {item}
+                {item.name}
               </Link>
             );
           })}

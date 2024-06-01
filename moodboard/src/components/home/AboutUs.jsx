@@ -1,6 +1,11 @@
+import useSmoothScroll from '../../hooks/useSmoothScroll';
+
 const AboutUs = () => {
+  useSmoothScroll();
+
   return (
     <section
+      id="aboutus"
       className="bg-gradient-to-bl to-red-800 from-white self-stretch py-20 xl:pl-20 mt-20 w-full max-md:px-2 max-md:mt-10 max-md:max-w-full
    "
     >
@@ -12,14 +17,14 @@ const AboutUs = () => {
               About our wedding Planning Services{' '}
             </h3>
             <div className="mt-20 text-base h-auto md:leading-10 sm:leading-8 text-neutral-700 max-md:mt-10 max-md:max-w-full">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              dapibus placerat velit. Donec in porttitor elit. Suspendisse
-              accumsan iaculis tincidunt. Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit. Sed dapibus placerat velit. Donec in
-              porttitor elit. Suspendisse accumsan iaculis tincidunt. Lorem
-              ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nostrum
-              facere iusto architecto vel assumenda nesciunt beatae aperiam
-              maiores quae?
+              SubhMangalPlanning is committed to delivering exceptional wedding
+              planning services tailored to your needs. From venue selection and
+              decor to vendor management and coordination, we handle every
+              detail with care and expertise. Trust us to bring your wedding
+              vision to life with creativity, dedication, and impeccable
+              service. Enjoy stress-free planning with our comprehensive vendor
+              management system, ensuring all your service providers are on the
+              same page and deliver on time.
             </div>
           </div>
         </div>

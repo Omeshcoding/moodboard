@@ -8,7 +8,29 @@ import Navbar from '../components/home/Navbar';
 import ServiceReview from '../components/home/ServiceReview';
 
 const Home = () => {
-  const navlinks = ['HOME', 'ABOUT US', 'SERVICES', 'GALLERY', 'CONTACT'];
+  const navlinks = [
+    {
+      name: 'HOME',
+      link: '/#home',
+    },
+    {
+      name: 'ABOUT US',
+      link: '/#aboutus',
+    },
+    {
+      name: 'SERVICES',
+      link: '/#services',
+    },
+    {
+      name: 'GALLERY',
+      link: '/#reviews',
+    },
+    {
+      name: 'Contact',
+      link: '/#footer',
+    },
+  ];
+
   return (
     <main className="overflow-hidden">
       <Navbar navlinks={navlinks} />

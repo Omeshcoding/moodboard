@@ -1,6 +1,10 @@
+import useSmoothScroll from '../../hooks/useSmoothScroll';
+
 const ServiceReview = () => {
+  useSmoothScroll();
   return (
     <section
+      id="reviews"
       className="bg-gradient-to-tr to-red-800 from-white self-stretch py-20 xl:pl-20  w-full max-md:px-2 max-md:mt-10 max-md:max-w-full h-full lg:h-[1000px] flex gap-20  items-center flex-col lg:flex-row mb-10
    "
     >
@@ -9,9 +13,8 @@ const ServiceReview = () => {
           {' '}
           Client Review To Our Service{' '}
         </h3>
-        <p className="mt-20 text-base leading-10 text-neutral-700  max-md:max-w-full">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus
-          placerat velit. Donec in porttitor
+        <p className="mt-20 text-base leading-6 text-neutral-700  max-md:max-w-full">
+          Listen what our previous customers have to say about us !
         </p>
       </div>
       <div className="w-[60%]">
@@ -43,10 +46,10 @@ const ServiceReview = () => {
                     ))}
                 </div>
 
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Assumenda expedita culpa blanditiis ex nemo maxime non
-                  officiis nihil!
+                <p className="text-sm leading-6">
+                  SubhMangalPlanning made our wedding day truly magical. Their
+                  attention to detail and dedication ensured everything went
+                  perfectly. We couldn&apos;t have asked for more!
                 </p>
               </div>
               <img
@@ -87,10 +90,11 @@ const ServiceReview = () => {
                     ))}
                 </div>
 
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Assumenda expedita culpa blanditiis ex nemo maxime non
-                  officiis nihil!
+                <p className="text-sm leading-6">
+                  Exceptional service from start to finish. The team at
+                  SubhMangalPlanning listened to our ideas and brought them to
+                  life beautifully. Highly recommend them for anyone planning a
+                  wedding!
                 </p>
               </div>
               <img

@@ -2,6 +2,7 @@ import { ArrowRight } from 'lucide-react';
 
 import ServiceCard from './ServiceCard';
 import { Link } from 'react-router-dom';
+import useSmoothScroll from '../../hooks/useSmoothScroll';
 
 const data = [
   {
@@ -41,14 +42,16 @@ const data = [
   },
   {
     title: 'Venue Theme Based Cloth Recommendation',
-    url: '/',
+    url: '/planground',
     image: '/dress.png',
   },
 ];
 
 const Services = () => {
+  useSmoothScroll();
+
   return (
-    <section className=" mb-28">
+    <section id="services" className=" mb-28">
       <div className="px-5 mt-28 w-full  max-md:mt-10 max-md:max-w-full ">
         <div className="flex justify-between my-8 md:mb-24  text-base md:p-14 lg:px-28 flex-col md:flex-row    text-neutral-800 items-start ">
           <h2 className="  font-extrabold text-primary  xl:leading-[75px] max-md:max-w-full text-4xl  md:text-5xl md:leading-[63px] max-w-[500px] lg:max-w-[600px] max-sm:leading-[50px]">
@@ -58,8 +61,8 @@ const Services = () => {
           <div className="max-w-[320px] md:max-w-[400px] font-normal ">
             <br></br>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-              maxime nobis saepe eum dolorem.
+              Look at the range of options and services we provide you to ease
+              the load off your shoulders
             </p>
             <Link
               to="/"

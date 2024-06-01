@@ -1,9 +1,15 @@
+import { Link } from 'react-router-dom';
+import useSmoothScroll from '../../hooks/useSmoothScroll';
 import Copyright from '../Copyright';
 import Logo from '../Logo';
 
 const Footer = () => {
+  useSmoothScroll();
   return (
-    <footer className="bg-[#770C15] text-white  md:px-20 pb-6 px-4 mt-8 max-md:text-center pt-8">
+    <footer
+      id="footer"
+      className="bg-[#770C15] text-white  md:px-20 pb-6 px-4 mt-8 max-md:text-center pt-8"
+    >
       <div className="mt-20 max-md:mt-10 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
@@ -67,26 +73,21 @@ const Footer = () => {
                 <div className="flex flex-col ml-5 w-[17%] max-md:ml-0 max-md:w-full ">
                   <div className="flex flex-col mt-14 text-xl  max-md:mt-10">
                     <h5 className="text-2xl font-bold capitalize "> Menu </h5>
-                    <div className="mt-11 max-md:mt-10">Home</div>
+                    <Link to="/#home" className="mt-11 max-md:mt-10">
+                      Home
+                    </Link>
 
-                    <div className="mt-7">About us</div>
-                    <div className="mt-7">Serices</div>
-                    <div className="mt-6">Reviews</div>
+                    <Link to="/#aboutus" className="mt-7">
+                      About us
+                    </Link>
+                    <Link to="/#services" className="mt-7">
+                      Services
+                    </Link>
+                    <Link to="/#reviews" className="mt-6">
+                      Reviews
+                    </Link>
                   </div>
                 </div>
-                {/* <div className="flex flex-col ml-5 w-[17%] max-md:ml-0 max-md:w-full ">
-                  <div className="flex flex-col mt-14 text-xl  max-md:mt-10">
-                    <h5 className="text-2xl font-bold capitalize ">
-                      {' '}
-                      Services{' '}
-                    </h5>
-                    <p className="mt-11 max-md:mt-10">Wedding Plan</p>
-
-                    <p className="mt-7">Task Scheduling</p>
-                    <p className="mt-7">Vendor Management</p>
-                    <p className="mt-6">Astrology services</p>
-                  </div>
-                </div> */}
               </div>
             </div>
           </div>
@@ -99,10 +100,18 @@ const Footer = () => {
                       {' '}
                       Services{' '}
                     </h5>
-                    <div className="mt-11 max-md:mt-10">Wedding Plan</div>
-                    <div className="mt-6">Task Scheduling</div>
-                    <div className="mt-6">Vendor Management</div>
-                    <div className="mt-7">Astrology services</div>
+                    <Link to="/planground" className="mt-11 max-md:mt-10">
+                      Wedding Plan
+                    </Link>
+                    <Link to="/moodboard" className="mt-6">
+                      Task Scheduling
+                    </Link>
+                    <Link to="/taskallocation" className="mt-6">
+                      Vendor Management
+                    </Link>
+                    <Link to="ritualsai" className="mt-7">
+                      Astrology services
+                    </Link>
                   </div>
                 </div>
                 <div className="flex flex-col ml-5 w-[62%] max-md:ml-0 max-md:w-full ">

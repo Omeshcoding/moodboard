@@ -1,39 +1,55 @@
 import Receiver from '../components/Chat/Receiver';
 import Sender from '../components/Chat/Sender';
-import { Plus, Smile, X } from 'lucide-react';
+import { Menu, Plus, Smile, X } from 'lucide-react';
 import { IoSend } from 'react-icons/io5';
 import PriestProfile from '../components/PriestProfile';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const RitualsAI = () => {
+  const [show, setShow] = useState(false);
   return (
     <article className="text-center h-[100vh] w-full flex overflow-y-scroll">
-      <aside className=" w-[30%] h-[100vh] overflow-y-scroll pt-8  flex flex-col gap-8 text-white bg-white">
-        <div className=" flex items-center py-1 h-1 gap-4 w-full px-2">
-          <span className="">
-            <X color="gray" size="2rem" />{' '}
-          </span>
-          <p className="text-gray-500 bg-white w-[80%] pl-2 font-semibold text-lg">
+      <button
+        type="button"
+        className={`mt-5 bg-[#770C15] p-3 rounded-md fixed sm:right-10 right-2 md:hidden z-50 ${
+          !show && 'text-[#ede8e8]'
+        }`}
+        onClick={() => setShow(!show)}
+      >
+        {!show ? <Menu color="#ede8e8" /> : <X color="#ede8e8" />}
+      </button>
+
+      <aside
+        className={`max-md:fixed  w-[60%] md:w-[30%] h-[100vh] overflow-y-scroll pt-8   flex-col gap-8 text-white bg-white ${
+          show ? 'translate-x-0 fixed' : 'max-md:translate-x-[-100%]  block'
+        } transition-all duration-300 z-40`}
+      >
+        <div className="bg-white  flex items-center py-1 mb-4 gap-4 w-full px-2">
+          <Link to="/dashboard" className="text-xl">
+            <X color="gray" />{' '}
+          </Link>
+          <p className="text-gray-500  w-[80%] pl-2 font-semibold text-sm md:text-lg">
             Choose your own AI Pandit
           </p>
         </div>
-        <div className="w-full bg-[#770C15] h-full">
+        <div className="w-full bg-[#770C15] h-full pt-10">
           <PriestProfile imgUrl="/rituals1.png" name="Shastri Vedaraman" />
           <PriestProfile imgUrl="/rituals2.png" name="Pastor Jason" />
 
           <PriestProfile imgUrl="/rituals2.png" name="Kazi Ibrahim" />
         </div>
       </aside>
-      <section className="overflow-y-scroll w-[70%] h-[100vh] bg-gradient-to-b to-[#770C15]  from-[#FDF0D5] self-stretch pt-20">
-        <div className="  flex flex-col  justify-center  items-center px-4 py-2">
-          <div className="relative">
-            <img
-              src="/ritualsmain.png"
-              height={800}
-              width={400}
-              alt="profileimage"
-              className="mb-4"
-            />
-          </div>
+
+      <section className="overflow-y-scroll max-md:w-[100%] md:w-[70%] h-[100vh] bg-gradient-to-b to-[#770C15]  from-[#FDF0D5] self-stretch pt-20">
+        <div className="  flex flex-col  justify-center  items-center px-4 py-2 ">
+          <img
+            src="/ritualsmain.png"
+            height={800}
+            width={400}
+            alt="profileimage"
+            className="mb-4"
+          />
           <div className=" text-[16px] text-white text-center mb-20">
             <p className="text-xl  font-bold mb-2">Shastri Vedaraman</p>
             <p>
@@ -50,21 +66,21 @@ shared with me recently?"
           <Sender message="Roland Barthes" timeStyle="text-black" />
         </div>
         <div
-          className={`fixed bottom-0 h-20 w-[70%] justify-center bg-white py-2 gap-3 px-4 items-center flex  `}
+          className={`fixed bottom-0 h-20 w-[100%] justify-center bg-white py-2 gap-3 z-0 px-2 md:px-4 items-center flex  `}
         >
           <Plus size="2.4rem" color="gray" strokeWidth={2} />
-          <div className="relative w-[100%] selection: ">
+          <div className="relative w-[100%]  ">
             <input
               type="text"
               placeholder="Type your message"
-              className="mx-auto w-[80%] h-14 text-lg border-2 border-[#E9EAED] rounded-full px-8"
+              className="mx-auto w-[80%] h-14 text-sm lg:text-lg border-2 border-[#E9EAED] rounded-full px-2 md:px-8"
             />
-            <span className="absolute right-36 top-3">
+            <span className="absolute md:right-36 top-3">
               <Smile size="2rem" color="gray" />
             </span>
           </div>
-          <span className="bg-[#B4B7BB] rounded-full p-3 text-[#770C15]">
-            <IoSend size={34} strokeWidth={2.1} className="pl-1" />
+          <span className="bg-[#B4B7BB] rounded-full p-3 text-lg text-[#770C15] ml-1">
+            <IoSend strokeWidth={2.1} className="pl-1" />
           </span>
         </div>
       </section>

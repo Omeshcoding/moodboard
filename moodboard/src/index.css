@@ -88,7 +88,7 @@ h6 {
 /* Dashboard-Overview */
 
 .overview {
-  @apply sm:w-[70%] mx-auto bg-[#770C15] mt-16 py-8 px-6 shadow-sm  drop-shadow-md h-auto rounded-md;
+  @apply sm:w-[70%] mx-auto bg-[#770C15] mt-16 py-8 px-6 shadow-sm   h-auto rounded-md -z-0;
 }
 .overview-title {
   @apply text-2xl text-white font-semibold max-md:text-center;

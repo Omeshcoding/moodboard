@@ -9,16 +9,33 @@ import Copyright from '../components/Copyright';
 
 const DashBoard = () => {
   const navlinks = [
-    'Dashboard',
-    'Planground',
-    'Vendors',
-    'Messages',
-    'Contact',
-    // eslint-disable-next-line react/jsx-key
-    <SquareUserRound size={32} />,
+    {
+      name: 'Dashboard',
+      link: '/dashboard',
+    },
+    {
+      name: 'Planground',
+      link: '/planground',
+    },
+    {
+      name: 'Vendors',
+      link: '/taskallocation',
+    },
+    {
+      name: 'Messages',
+      link: '/messages',
+    },
+    {
+      name: 'Contact',
+      link: '/integratewp',
+    },
+    {
+      name: <SquareUserRound size={32} />,
+      link: '/integratewp',
+    },
   ];
   return (
-    <section className="bg-gradient-to-tr  to-red-800 from-[#DC897C] self-stretch  h-[100%]">
+    <section className="bg-gradient-to-tr  to-red-800 from-[#DC897C] self-stretch  h-[100%] overflow-hidden">
       <Navbar navlinks={navlinks} />
       <Overview />
       <ChannelCard />
