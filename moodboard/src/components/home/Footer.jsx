@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer
       id="footer"
-      className="bg-[#770C15] text-white  md:px-20 pb-6 px-4 mt-8 max-md:text-center pt-8"
+      className="bg-[#770C15] text-white  lg:px-20 pb-6 px-4 mt-8 max-md:text-center pt-8"
     >
       <div className="mt-20 max-md:mt-10 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
@@ -73,17 +73,17 @@ const Footer = () => {
                 <div className="flex flex-col ml-5 w-[17%] max-md:ml-0 max-md:w-full ">
                   <div className="flex flex-col mt-14 text-xl  max-md:mt-10">
                     <h5 className="text-2xl font-bold capitalize "> Menu </h5>
-                    <Link to="/#home" className="mt-11 max-md:mt-10">
+                    <Link to="/#home" className="mt-11 max-md:mt-10  text-md">
                       Home
                     </Link>
 
-                    <Link to="/#aboutus" className="mt-7">
+                    <Link to="/#aboutus" className="mt-7 text-md">
                       About us
                     </Link>
-                    <Link to="/#services" className="mt-7">
+                    <Link to="/#services" className="mt-7 text-md">
                       Services
                     </Link>
-                    <Link to="/#reviews" className="mt-6">
+                    <Link to="/#reviews" className="mt-6 text-md">
                       Reviews
                     </Link>
                   </div>
@@ -100,16 +100,19 @@ const Footer = () => {
                       {' '}
                       Services{' '}
                     </h5>
-                    <Link to="/planground" className="mt-11 max-md:mt-10">
+                    <Link
+                      to="/planground"
+                      className="mt-11 max-md:mt-10 text-md"
+                    >
                       Wedding Plan
                     </Link>
-                    <Link to="/moodboard" className="mt-6">
+                    <Link to="/moodboard" className="mt-6 text-md">
                       Task Scheduling
                     </Link>
-                    <Link to="/taskallocation" className="mt-6">
+                    <Link to="/taskallocation" className="mt-6 text-md">
                       Vendor Management
                     </Link>
-                    <Link to="ritualsai" className="mt-7">
+                    <Link to="ritualsai" className="mt-7 text-md">
                       Astrology services
                     </Link>
                   </div>

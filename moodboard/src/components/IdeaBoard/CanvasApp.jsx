@@ -3,10 +3,11 @@ import URLImage from './URLImage';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { io } from 'socket.io-client';
 import Sidebar from '../Sidebar';
-import { Plus } from 'lucide-react';
+import { Menu, Plus, X } from 'lucide-react';
 const CanvasApp = () => {
   const [images, setImages] = useState([]);
   const [selectedId, selectShape] = useState(null);
+  const [show, setShow] = useState(true);
   const [scale, setScale] = useState(1);
   const [stagePos, setStagePos] = useState({ x: 0, y: 0 });
   const [isDraggingImage, setIsDraggingImage] = useState(false);
@@ -193,11 +194,21 @@ const CanvasApp = () => {
       onDragOver={handleDragOver}
       className="w-[100vw] h-[100vh]"
     >
+      <button
+        type="button"
+        className={`mt-5 bg-[#770C15] p-3 rounded-md fixed sm:right-10 right-2 md:hidden z-50 ${
+          !show && 'text-[#ede8e8]'
+        }`}
+        onClick={() => setShow(!show)}
+      >
+        {!show ? <Menu color="#ede8e8" /> : <X color="#ede8e8" />}
+      </button>
       <div className="">
         <Sidebar
           title="InspireBoard"
           tags={['Theme', 'Clothes', 'Venues', 'Makeup']}
           boards={['Clothes', 'Makeup Inspo', 'Venues', 'Venue 2']}
+          show={show}
         />
         <div className="fixed w-40 bottom-36 right-10">
           <input
@@ -209,15 +220,7 @@ const CanvasApp = () => {
           />
           <button
             onClick={() => fileInputRef.current.click()}
-            className="fixed left-10 py-1 px-4  cursor-pointer rounded-md top-10 bg-[#770C15] font-semibold border-2 hover:text-red-600  transition-all duration-600 ease-in-out"
-            style={{
-              position: 'absolute',
-              top: 40,
-              left: 10,
-              zIndex: 10,
-              padding: '10px 20px',
-              fontSize: '16px',
-            }}
+            className="fixed h-20 bottom-10 right-2 md:right-8 py-1 px-4  cursor-pointer rounded-md  bg-[#770C15] font-semibold border-2 hover:text-red-600  transition-all duration-600 ease-in-out"
           >
             <Plus strokeWidth={3} size={43} color="white" />
           </button>

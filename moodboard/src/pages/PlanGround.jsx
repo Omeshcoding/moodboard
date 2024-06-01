@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 
 import ReactFlow, {
   useNodesState,
@@ -11,6 +11,7 @@ import ReactFlow, {
 
 import 'reactflow/dist/style.css';
 import Sidebar from '../components/Sidebar';
+import { Menu, X } from 'lucide-react';
 
 const initialNodes = [
   {
@@ -121,17 +122,17 @@ const initialEdges = [
   { id: 'e1-2da', source: '3', target: '7' },
   { id: 'e1-2de', source: '3', target: '8' },
   { id: 'e1-2def', source: '3', target: '9' },
-  { id: 'e1-2dea', source: '3', target: '10' },
-  { id: 'e1-2dea', source: '5', target: '11' },
-  { id: 'e1-2dea', source: '5', target: '12' },
-  { id: 'e1-2dea', source: '5', target: '13' },
-  { id: 'e1-2dea', source: '5', target: '14' },
+  { id: 'e1-2deb', source: '3', target: '10' },
+  { id: 'e1-2dec', source: '5', target: '11' },
+  { id: 'e1-2ded', source: '5', target: '12' },
+  { id: 'e1-2dee', source: '5', target: '13' },
+  { id: 'e1-2de0', source: '5', target: '14' },
 ];
 
 const PlanGround = () => {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
-
+  const [show, setShow] = useState(true);
   const onConnect = useCallback(
     (params) => setEdges((eds) => addEdge(params, eds)),
     [setEdges]
@@ -139,12 +140,22 @@ const PlanGround = () => {
 
   return (
     <>
+      <button
+        type="button"
+        className={`mt-5 bg-[#770C15] p-3 rounded-md fixed sm:right-10 right-2 md:hidden z-50 ${
+          !show && 'text-[#ede8e8]'
+        }`}
+        onClick={() => setShow(!show)}
+      >
+        {!show ? <Menu color="#ede8e8" /> : <X color="#ede8e8" />}
+      </button>
       <Sidebar
         title="Planground"
         tags={['Square', 'Line', 'Dimond', 'Boolean']}
         boards={['Catering', 'Decorations', 'Venues', 'Shopping']}
+        show={show}
       />
-      <div style={{ width: '68vw', height: '100vh' }} className="ml-auto">
+      <div style={{ width: '88vw', height: '100vh' }} className="ml-auto ">
         <ReactFlow
           nodes={nodes}
           edges={edges}
