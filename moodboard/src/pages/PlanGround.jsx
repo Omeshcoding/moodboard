@@ -10,6 +10,7 @@ import ReactFlow, {
 } from 'reactflow';
 
 import 'reactflow/dist/style.css';
+import Sidebar from '../components/Sidebar';
 
 const initialNodes = [
   {
@@ -138,7 +139,12 @@ const PlanGround = () => {
 
   return (
     <>
-      <div style={{ width: '100vw', height: '100vh' }}>
+      <Sidebar
+        title="Planground"
+        tags={['Square', 'Line', 'Dimond', 'Boolean']}
+        boards={['Catering', 'Decorations', 'Venues', 'Shopping']}
+      />
+      <div style={{ width: '68vw', height: '100vh' }} className="ml-auto">
         <ReactFlow
           nodes={nodes}
           edges={edges}

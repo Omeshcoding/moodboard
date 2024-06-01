@@ -9,6 +9,7 @@ import CreateProfile from '../src/pages/CreateProfile';
 import DashBoard from '../src/pages/DashBoard';
 import Chat from './components/Chat/Chat';
 import PlanGround from '../src/pages/PlanGround';
+import IntegrateWhatsapp from './pages/IntegrateWhatsapp';
 
 function App() {
   return (
@@ -19,6 +20,16 @@ function App() {
           <Route path="/moodboard" element={<Moodboard />}></Route>
           <Route path="/ritualsai" element={<RitualsAI />}></Route>
           <Route path="/planground" element={<PlanGround />}></Route>
+          <Route
+            path="/taskallocation
+          "
+            element={<IntegrateWhatsapp />}
+          ></Route>
+          <Route
+            path="/integratewp
+          "
+            element={<IntegrateWhatsapp />}
+          ></Route>
 
           <Route path="/onboarding" element={<OnBoarding />}></Route>
           <Route path="/createprofile" element={<CreateProfile />}></Route>

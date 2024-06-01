@@ -2,7 +2,8 @@ import { Layer, Stage } from 'react-konva';
 import URLImage from './URLImage';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { io } from 'socket.io-client';
-
+import Sidebar from '../Sidebar';
+import { Plus } from 'lucide-react';
 const CanvasApp = () => {
   const [images, setImages] = useState([]);
   const [selectedId, selectShape] = useState(null);
@@ -190,30 +191,37 @@ const CanvasApp = () => {
     <div
       onDrop={handleDrop}
       onDragOver={handleDragOver}
-      className="w-[100vw] md:border-2 md:border-red-900 h-[100vh]"
+      className="w-[100vw] h-[100vh]"
     >
       <div className="">
-        <input
-          ref={fileInputRef}
-          type="file"
-          accept="image/*"
-          style={{ display: 'none' }}
-          onChange={handleImageUpload}
+        <Sidebar
+          title="InspireBoard"
+          tags={['Theme', 'Clothes', 'Venues', 'Makeup']}
+          boards={['Clothes', 'Makeup Inspo', 'Venues', 'Venue 2']}
         />
-        <button
-          onClick={() => fileInputRef.current.click()}
-          className="fixed left-10 py-1 px-4  cursor-pointer rounded-md top-10 text-red-900 font-semibold border-black border-2 hover:text-red-600 hover:border-red-600 hover:border-4 transition-all duration-600 ease-in-out"
-          style={{
-            position: 'absolute',
-            top: 40,
-            left: 10,
-            zIndex: 10,
-            padding: '10px 20px',
-            fontSize: '16px',
-          }}
-        >
-          Add Image
-        </button>
+        <div className="fixed w-40 bottom-36 right-10">
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="image/*"
+            style={{ display: 'none' }}
+            onChange={handleImageUpload}
+          />
+          <button
+            onClick={() => fileInputRef.current.click()}
+            className="fixed left-10 py-1 px-4  cursor-pointer rounded-md top-10 bg-[#770C15] font-semibold border-2 hover:text-red-600  transition-all duration-600 ease-in-out"
+            style={{
+              position: 'absolute',
+              top: 40,
+              left: 10,
+              zIndex: 10,
+              padding: '10px 20px',
+              fontSize: '16px',
+            }}
+          >
+            <Plus strokeWidth={3} size={43} color="white" />
+          </button>
+        </div>
       </div>
       <Stage
         width={window.innerWidth}
