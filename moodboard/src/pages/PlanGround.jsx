@@ -12,131 +12,86 @@ import ReactFlow, {
 import 'reactflow/dist/style.css';
 import Sidebar from '../components/Sidebar';
 import { Menu, X } from 'lucide-react';
+import axios from 'axios';
 
-const initialNodes = [
-  {
-    id: '1',
-    sourcePosition: 'right',
-    type: 'input',
-    position: { x: 0, y: 300 },
-    data: { label: 'Engagement Ceremony' },
-  },
-  {
-    id: '2',
-    sourcePosition: 'right',
-    targetPosition: 'left',
-    position: { x: 300, y: 100 },
-    data: { label: 'Mehendi (Henna) Ceremony' },
-  },
-  {
-    id: '3',
-    sourcePosition: 'right',
-    targetPosition: 'left',
-    position: { x: 300, y: 200 },
-    data: { label: 'Haldi Ceremony ' },
-  },
-  {
-    id: '4',
-    sourcePosition: 'right',
-    targetPosition: 'left',
-    position: { x: 300, y: 300 },
-    data: { label: 'Sangeet Ceremony ' },
-  },
-  {
-    id: '5',
-    sourcePosition: 'right',
-    targetPosition: 'left',
-    position: { x: 300, y: 400 },
-    data: { label: 'Bachelor/Bachelorette Party' },
-  },
-  {
-    id: '6',
-    sourcePosition: 'right',
-    targetPosition: 'left',
-    position: { x: 300, y: 500 },
-    data: { label: 'Bridal Shower' },
-  },
-  {
-    id: '7',
-    sourcePosition: 'right',
-    targetPosition: 'left',
-    position: { x: 600, y: 100 },
-    data: { label: 'Wedding Procession' },
-  },
-  {
-    id: '8',
-    sourcePosition: 'right',
-    targetPosition: 'left',
-    position: { x: 600, y: 150 },
-    data: { label: 'Exchange of Vows' },
-  },
-  {
-    id: '9',
-    sourcePosition: 'right',
-    targetPosition: 'left',
-    position: { x: 600, y: 200 },
-    data: { label: 'Exchange of Rings' },
-  },
-  {
-    id: '10',
-    sourcePosition: 'right',
-    targetPosition: 'left',
-    position: { x: 600, y: 250 },
-    data: { label: 'Kanyadaan' },
-  },
-  {
-    id: '11',
-    sourcePosition: 'right',
-    targetPosition: 'left',
-    position: { x: 600, y: 350 },
-    data: { label: 'Mangal Pheras' },
-  },
-  {
-    id: '12',
-    sourcePosition: 'right',
-    targetPosition: 'left',
-    position: { x: 600, y: 400 },
-    data: { label: 'Sindoor and Mangalsutra' },
-  },
-  {
-    id: '13',
-    sourcePosition: 'right',
-    targetPosition: 'left',
-    position: { x: 600, y: 450 },
-    data: { label: 'Pronouncement' },
-  },
-  {
-    id: '14',
-    sourcePosition: 'right',
-    targetPosition: 'left',
-    position: { x: 600, y: 500 },
-    data: { label: 'Reception' },
-  },
-];
-const initialEdges = [
-  { id: 'e1-2', source: '1', target: '2' },
-  { id: 'e1-2a', source: '1', target: '3' },
-  { id: 'e1-2b', source: '1', target: '4' },
-  { id: 'e1-2c', source: '1', target: '5' },
-  { id: 'e1-2d', source: '1', target: '6' },
-  { id: 'e1-2da', source: '3', target: '7' },
-  { id: 'e1-2de', source: '3', target: '8' },
-  { id: 'e1-2def', source: '3', target: '9' },
-  { id: 'e1-2deb', source: '3', target: '10' },
-  { id: 'e1-2dec', source: '5', target: '11' },
-  { id: 'e1-2ded', source: '5', target: '12' },
-  { id: 'e1-2dee', source: '5', target: '13' },
-  { id: 'e1-2de0', source: '5', target: '14' },
-];
+const transformDataToNodes = (data) => {
+  if (!data || !data.chapters) {
+    console.error('Invalid data structure:', data);
+    return { nodes: [], edges: [] };
+  }
+  let yPos = 0;
+  const nodes = [];
+  const edges = [];
+  const chapters = Object.keys(data.chapters);
 
+  chapters.forEach((chapter, chapterIndex) => {
+    data.chapters[chapter].forEach((module, moduleIndex) => {
+      const nodeId = `${chapterIndex}-${moduleIndex}`;
+      nodes.push({
+        id: nodeId,
+        sourcePosition: 'right',
+        targetPosition: 'left',
+        position: { x: chapterIndex * 300, y: yPos },
+        data: { label: module.moduleName },
+      });
+      yPos += 100;
+
+      if (moduleIndex > 0) {
+        const prevNodeId = `${chapterIndex}-${moduleIndex - 1}`;
+        edges.push({
+          id: `e${prevNodeId}-${nodeId}`,
+          source: prevNodeId,
+          target: nodeId,
+          animated: true,
+        });
+      }
+    });
+  });
+
+  return { nodes, edges };
+};
 const PlanGround = () => {
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+  const [nodes, setNodes, onNodesChange] = useNodesState([]);
+  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [show, setShow] = useState(false);
+  const [name, setName] = useState('');
   const onConnect = useCallback(
     (params) => setEdges((eds) => addEdge(params, eds)),
     [setEdges]
   );
+
+  const handleFlowChart = (val) => {
+    setName(val);
+  };
+  const handleSendData = async () => {
+    if (name === '') {
+      console.log('enter search parameters');
+      return;
+    }
+    try {
+      const response = await axios.post(
+        'https://shubh-manglam-planning.vercel.app/api/AI/planner',
+        {
+          query: 'Plan wedding dress shopping',
+        }
+      );
+      const apiData = response.data;
+
+      if (!apiData || typeof apiData !== 'object' || !apiData.answer) {
+        throw new Error('Invalid API response');
+      }
+      const jsonString = apiData.answer.match(/```json\n([\s\S]*?)\n```/)[1];
+      const parsedData = JSON.parse(jsonString);
+
+      const { nodes, edges } = transformDataToNodes(parsedData);
+      setNodes([...nodes]);
+      setEdges([...edges]);
+      setName('');
+    } catch (error) {
+      console.error('Error fetching data from API', error);
+    }
+  };
+
   const boardsData = [
     {
       imgUrl: '/canvas1.png',
@@ -171,6 +126,9 @@ const PlanGround = () => {
         tags={['Square', 'Line', 'Dimond', 'Boolean']}
         boards={boardsData}
         show={show}
+        name={name}
+        handleFlowChart={handleFlowChart}
+        handleSendData={handleSendData}
       />
       <div style={{ width: '88vw', height: '100vh' }} className="ml-auto ">
         <ReactFlow

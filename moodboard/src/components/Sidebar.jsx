@@ -1,8 +1,17 @@
 /* eslint-disable react/prop-types */
 import { CircleChevronRight, ArrowLeft } from 'lucide-react';
+import { IoSend } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 
-const Sidebar = ({ title, tags, boards, show }) => {
+const Sidebar = ({
+  title,
+  tags,
+  boards,
+  show,
+  handleFlowChart,
+  name,
+  handleSendData,
+}) => {
   return (
     <aside
       className={` fixed  w-[60%] md:w-[30%] h-[100%] overflow-y-scroll  flex-col gap-8 text-white z-40 bg-[#770C15]  ${
@@ -18,11 +27,22 @@ const Sidebar = ({ title, tags, boards, show }) => {
         </p>
       </div>
       <div className="pr-2 w-full flex flex-col items-center pt-10 bg-[#770C15] lg:h-full">
-        <input
-          type="text"
-          placeholder="Search"
-          className="mx-auto w-[90%] h-10 text-lg border-2 border-[#E9EAED] rounded-full px-8"
-        />
+        <div className="flex">
+          <input
+            type="text"
+            value={name}
+            placeholder="Search"
+            className="mx-auto w-[80%] h-10 text-lg border-2 text-black py-6 border-[#E9EAED] rounded-full px-8"
+            onChange={(e) => handleFlowChart(e.target.value)}
+          />
+          <button
+            type="button"
+            className="bg-[#B4B7BB] rounded-full p-3 px-4 text-lg text-[#770C15] ml-1"
+            onClick={handleSendData}
+          >
+            <IoSend strokeWidth={2.1} className="pl-1" />
+          </button>
+        </div>
         <div className=" flex flex-nowrap w-full pl-8   overflow-x-scroll items-center gap-4 mt-4 h-20 py-6">
           {tags.map((item, index) => (
             <div

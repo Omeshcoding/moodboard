@@ -1,8 +1,12 @@
 /* eslint-disable react/prop-types */
 
-const PriestProfile = ({ name, imgUrl }) => {
+const PriestProfile = ({ chatType, name, imgUrl, type, messageType }) => {
   return (
-    <div className="flex flex-wrap  justify-center sm:justify-start items-center my-10 mx-auto h-auto  w-[80%] gap-2 bg-[#FDF0D5] text-[#770C15] rounded-lg px-4 ">
+    <div
+      value={chatType}
+      className="flex flex-wrap  justify-center sm:justify-start items-center my-10 mx-auto h-auto  w-[80%] gap-2 bg-[#FDF0D5] text-[#770C15] rounded-lg px-4 cursor-pointer"
+      onClick={() => messageType(type)}
+    >
       <img
         src={imgUrl}
         height={80}

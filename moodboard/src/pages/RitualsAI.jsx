@@ -5,9 +5,43 @@ import { IoSend } from 'react-icons/io5';
 import PriestProfile from '../components/PriestProfile';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const RitualsAI = () => {
   const [show, setShow] = useState(false);
+  const [sendMessage, setSendMessage] = useState('');
+  const [message, setMessage] = useState([]);
+  const [chatType, setChatType] = useState(null);
+  const [error, setError] = useState('');
+
+  const handleChatType = async (type) => {
+    setChatType(type);
+  };
+  const handleSendMessage = async (e) => {
+    e.preventDefault();
+
+    if (!chatType) {
+      setError('Please Select your Priest');
+      setTimeout(() => {
+        setError('');
+      }, 5000);
+      return;
+    }
+    const newMessage = { text: sendMessage, sender: 'user' };
+    setMessage((prevMessages) => [...prevMessages, newMessage]);
+    setSendMessage('');
+    try {
+      const response = await axios.post(
+        `https://shubh-manglam-planning.vercel.app/api/chat/${chatType}`,
+        { message: sendMessage }
+      );
+      const receivedMessage = { text: response.data.answer, sender: 'api' };
+      setMessage((prevMessages) => [...prevMessages, receivedMessage]);
+    } catch (error) {
+      console.error('Error sending message');
+    }
+  };
+
   return (
     <article className="text-center h-[100vh] w-full flex overflow-y-scroll">
       <button
@@ -34,15 +68,38 @@ const RitualsAI = () => {
           </p>
         </div>
         <div className="w-full bg-[#770C15] h-full pt-10">
-          <PriestProfile imgUrl="/rituals1.png" name="Shastri Vedaraman" />
-          <PriestProfile imgUrl="/rituals2.png" name="Pastor Jason" />
+          <PriestProfile
+            imgUrl="/rituals1.png"
+            name="Shastri Vedaraman"
+            type="hindu"
+            chatType={chatType}
+            messageType={handleChatType}
+          />
+          <PriestProfile
+            imgUrl="/rituals2.png"
+            type="christian"
+            name="Pastor Jason"
+            chatType={chatType}
+            messageType={handleChatType}
+          />
 
-          <PriestProfile imgUrl="/rituals2.png" name="Kazi Ibrahim" />
+          <PriestProfile
+            imgUrl="/rituals2.png"
+            type="muslim"
+            name="Kazi Ibrahim"
+            chatType={chatType}
+            messageType={handleChatType}
+          />
         </div>
       </aside>
 
-      <section className="overflow-y-scroll max-md:w-[100%] md:w-[70%] h-[100vh] bg-gradient-to-b to-[#770C15]  from-[#FDF0D5] self-stretch pt-20">
+      <section className="overflow-y-scroll max-md:w-[100%] md:w-[70%] h-[100%] bg-gradient-to-b to-[#770C15]  from-[#FDF0D5] self-stretch pt-20 pb-40">
         <div className="  flex flex-col  justify-center  items-center px-4 py-2 ">
+          {error && (
+            <p className="font-bold uppercase text-xl bg-[#FDF0D5] w-[400px] rounded-sm py-4 text-[#770C15]">
+              {error}
+            </p>
+          )}
           <img
             src="/ritualsmain.png"
             height={800}
@@ -58,30 +115,37 @@ const RitualsAI = () => {
           </div>
         </div>
         <div className=" h-[100vh]">
-          <Receiver
-            message="Who was that philosopher you
-shared with me recently?"
-            timeStyle="text-black"
-          />
-          <Sender message="Roland Barthes" timeStyle="text-black" />
+          {message.map((msg, index) =>
+            msg.sender === 'user' ? (
+              <Sender key={index} message={msg.text} timeStyle="text-black" />
+            ) : (
+              <Receiver key={index} message={msg.text} timeStyle="text-black" />
+            )
+          )}
         </div>
         <div
           className={`fixed bottom-0 h-20 w-[100%]  bg-white py-2 gap-0 z-0 px-2 md:px-4 items-center flex  `}
         >
           <Plus size="2.4rem" color="gray" strokeWidth={2} />
-          <div className="relative max-md:w-[100%] w-[60%]  ">
+          <form className="relative max-md:w-[100%] w-[60%]  ">
             <input
               type="text"
+              value={sendMessage}
               placeholder="Type your message"
               className="mx-auto max-md:w-[100%] w-[90%] h-10 text-sm lg:text-lg border-2 border-[#E9EAED] rounded-full px-3 md:px-8"
+              onChange={(e) => setSendMessage(e.target.value)}
             />
             <span className="absolute md:right-10 right-3 top-1 xl:right-14">
               <Smile size="2rem" color="gray" />
             </span>
-          </div>
-          <span className="bg-[#B4B7BB] rounded-full p-3 text-lg text-[#770C15] ml-1">
+          </form>
+          <button
+            type="button"
+            className="bg-[#B4B7BB] rounded-full p-3 text-lg text-[#770C15] ml-1"
+            onClick={handleSendMessage}
+          >
             <IoSend strokeWidth={2.1} className="pl-1" />
-          </span>
+          </button>
         </div>
       </section>
     </article>
