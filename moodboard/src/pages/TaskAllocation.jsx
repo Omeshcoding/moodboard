@@ -25,6 +25,10 @@ const TaskAllocation = () => {
       link: '/integratewp',
     },
     {
+      name: 'Home',
+      link: '/',
+    },
+    {
       name: <SquareUserRound size={32} />,
       link: '/integratewp',
     },

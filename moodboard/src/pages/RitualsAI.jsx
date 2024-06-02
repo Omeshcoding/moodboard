@@ -1,6 +1,6 @@
 import Receiver from '../components/Chat/Receiver';
 import Sender from '../components/Chat/Sender';
-import { Menu, Plus, Smile, X } from 'lucide-react';
+import { ArrowLeft, Menu, Plus, Smile, X } from 'lucide-react';
 import { IoSend } from 'react-icons/io5';
 import PriestProfile from '../components/PriestProfile';
 import { useState } from 'react';
@@ -27,7 +27,7 @@ const RitualsAI = () => {
       >
         <div className="bg-white  flex items-center py-1 mb-4 gap-4 w-full px-2">
           <Link to="/dashboard" className="text-xl">
-            <X color="gray" />{' '}
+            <ArrowLeft color="gray" />{' '}
           </Link>
           <p className="text-gray-500  w-[80%] pl-2 font-semibold text-sm md:text-lg">
             Choose your own AI Pandit

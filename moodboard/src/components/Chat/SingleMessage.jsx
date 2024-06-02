@@ -1,31 +1,29 @@
 /* eslint-disable react/prop-types */
 const SingleMessage = ({ title, desc, time, notification }) => {
   return (
-    <div className="relative flex justify-center  sm:justify-between  p-6 bg-white text-gray-500 hover:text-black my-2 md:my-4 rounded-md sm:items-center flex-wrap gap-4 hover:bg-[#DBDDE1]">
-      <div className="flex flex-wrap  justify-center sm:justify-start items-center">
+    <div className="relative flex     px-1 lg:px-2 py-4 bg-white text-gray-500 hover:text-black my-2 md:my-4 rounded-md sm:items-center flex-wrap gap-2 hover:bg-[#DBDDE1]">
+      <div className="flex flex-wrap  justify-start w-[50px] items-center">
         <img
           src="/Avatar.png"
           height={80}
           width={70}
           alt="profileimage"
-          className=" rounded-full border-2 border-darkerGray"
+          className="w-[100%] md:w-16 rounded-full border-2 border-darkerGray"
         />
-        <div className="text-center sm:text-left sm:ml-4 text-[16px] text-darkGray">
-          <p className="text-xl text-black font-bold mb-2">{title}</p>
-          <p className="">{desc}</p>
-        </div>
       </div>
-      <div className="flex flex-col h-20">
+      <div className="text-left text-wrap sm:ml-4 md:text-[16px] text-darkGray text-[11px] max-w-[60%]">
+        <p className=" md:text-xl text-black font-bold mb-2">{title}</p>
+        <p className="">{desc}</p>
+      </div>
+      <div className="relative flex flex-col w-14 ml-auto  ">
         {notification > 0 && (
-          <p className="   w-8 h-8 text-center pt-1 mx-auto mb-2   bg-[#FF3742] text-white rounded-full">
+          <p className=" absolute -top-6 right-2  w-6 h-6  text-[11px] pt-1 mx-auto mb-2    bg-[#FF3742] text-white rounded-full">
             {notification}
           </p>
         )}
 
         <p
-          className={`py-1 px-4 rounded-sm flex flex-end items-end gap-1 text-darkerGray  ${
-            notification < 1 && 'mt-12'
-          }`}
+          className={`py-1 px-1 rounded-sm gap-1 flex items-end text-darkerGray max-sm:text-[11px]  `}
         >
           {time}
         </p>

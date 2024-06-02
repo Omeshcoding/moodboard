@@ -23,15 +23,19 @@ const DashBoard = () => {
     },
     {
       name: 'Messages',
-      link: '/messages',
+      link: '/chat',
     },
     {
       name: 'Contact',
       link: '/integratewp',
     },
     {
+      name: 'Home',
+      link: '/',
+    },
+    {
       name: <SquareUserRound size={32} />,
-      link: '/integratewp',
+      link: '/onboarding',
     },
   ];
   return (

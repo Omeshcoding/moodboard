@@ -31,7 +31,9 @@ const VendorDirectory = () => {
     <section className=" md:w-[70%] mx-auto mt-16 py-8 px-6  h-auto rounded-md mb-20">
       <div className="flex justify-between flex-wrap items-center mb-10 ">
         <p className="overview-title ">Vendor Directory</p>
-        <button className="btn px-4  py-2 ">Add Vendor </button>
+        <Link to="/comingsoon">
+          <button className="btn px-4  py-2 ">Add Vendor </button>
+        </Link>
       </div>
       <div className="flex flex-wrap gap-8 w-full justify-center">
         {vendorData.map((item, index) => {
@@ -50,7 +52,7 @@ const VendorDirectory = () => {
                 <p className="text-md ">{item.reviews} </p>
               </div>
               <p className="text-md text-[#4B5563]">{item.price} </p>
-              <Link to={item.link} className="text-sm text-[#2563EB]">
+              <Link to="/comingsoon" className="text-sm text-[#2563EB]">
                 View Profile{' '}
               </Link>
             </div>

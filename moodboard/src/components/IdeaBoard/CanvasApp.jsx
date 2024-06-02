@@ -7,7 +7,7 @@ import { Menu, Plus, X } from 'lucide-react';
 const CanvasApp = () => {
   const [images, setImages] = useState([]);
   const [selectedId, selectShape] = useState(null);
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const [scale, setScale] = useState(1);
   const [stagePos, setStagePos] = useState({ x: 0, y: 0 });
   const [isDraggingImage, setIsDraggingImage] = useState(false);
@@ -103,9 +103,11 @@ const CanvasApp = () => {
         id: `img${images.length + 1}`,
         width: 100,
         height: 100,
+        votes: 0,
       };
 
       const updatedImages = [...images, newImage];
+      console.log(updatedImages);
       setImages(updatedImages);
       socketRef.current.emit('updatedImages', updatedImages);
     };
@@ -210,7 +212,7 @@ const CanvasApp = () => {
           boards={['Clothes', 'Makeup Inspo', 'Venues', 'Venue 2']}
           show={show}
         />
-        <div className="fixed w-40 bottom-36 right-10">
+        <div className="z-50 fixed w-40 bottom-36 right-10">
           <input
             ref={fileInputRef}
             type="file"
@@ -219,8 +221,9 @@ const CanvasApp = () => {
             onChange={handleImageUpload}
           />
           <button
+            type="button"
             onClick={() => fileInputRef.current.click()}
-            className="fixed h-20 bottom-10 right-2 md:right-8 py-1 px-4  cursor-pointer rounded-md  bg-[#770C15] font-semibold border-2 hover:text-red-600  transition-all duration-600 ease-in-out"
+            className="fixed h-20 bottom-10 right-2 md:right-8 py-1 px-4  cursor-pointer rounded-md  bg-[#770C15] font-semibold border-2 hover:text-red-600  transition-all duration-600 ease-in-out "
           >
             <Plus strokeWidth={3} size={43} color="white" />
           </button>

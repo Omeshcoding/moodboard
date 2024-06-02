@@ -132,7 +132,7 @@ const initialEdges = [
 const PlanGround = () => {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const onConnect = useCallback(
     (params) => setEdges((eds) => addEdge(params, eds)),
     [setEdges]
