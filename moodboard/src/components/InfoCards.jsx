@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 /* eslint-disable react/prop-types */
 const InfoCards = ({ title, tag, desc, imgUrl }) => {
   return (
@@ -8,9 +10,12 @@ const InfoCards = ({ title, tag, desc, imgUrl }) => {
           <p>{tag}</p>
         </div>
         <p>{desc}</p>
-        <button className="btn px-6 py-[6px] w-[150px] max-md:mx-auto">
-          Try it Now
-        </button>
+        <Link
+          to="/ritualsai"
+          className="btn px-6 py-[6px] w-[150px] max-md:mx-auto"
+        >
+          <button>Try it Now</button>
+        </Link>
       </div>
       <div className="flex flex-col justify-center mx-5 w-[45%] max-md:ml-0 max-md:w-full order-1">
         <div className="w-[100%] mx-auto h-full ">

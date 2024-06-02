@@ -3,17 +3,29 @@ import { Link } from 'react-router-dom';
 const CreateProfile = () => {
   return (
     <section className=" onboarding">
-      <div className="login_container">
-        <p className="login_title">Set up your profile</p>
+      <div className="login_container rounded-lg">
+        <p className="login_title px-6 pb-4 md:pb-8">Set up your profile</p>
         <form action="POST" className="form-container">
           <input type="text" placeholder="Full name" className="input_field" />
-          <small>Role</small>
+          <small>Select Role</small>
           <div className="sign_up_container">
-            <button className="links_btn_full">Event Organizer</button>
-            <button className="links_btn_full">Vendor </button>
+            <button
+              type="button"
+              className="w-full bg-[#be2f2f] text-white max-md:text-md rounded-md py-2 "
+            >
+              Event Organizer
+            </button>
+            <button
+              type="button"
+              className="w-full bg-[#be2f2f] text-white max-md:text-md rounded-md py-2 "
+            >
+              Vendor{' '}
+            </button>
           </div>
-          <Link to="#">
-            <button className="links_btn_full">Complete Profile </button>
+          <Link to="/dashboard">
+            <button type="button" className="links_btn_full">
+              Complete Profile{' '}
+            </button>
           </Link>
         </form>
       </div>

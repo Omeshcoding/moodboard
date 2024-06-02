@@ -11,6 +11,7 @@ import Chat from './components/Chat/Chat';
 import PlanGround from '../src/pages/PlanGround';
 import IntegrateWhatsapp from './pages/IntegrateWhatsapp';
 import TaskAllocation from './pages/TaskAllocation';
+import ComingSoon from './pages/ComingSoon';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/integratewp" element={<IntegrateWhatsapp />}></Route>
           <Route path="/taskallocation" element={<TaskAllocation />}></Route>
 
+          <Route path="/comingsoon" element={<ComingSoon />}></Route>
           <Route path="/onboarding" element={<OnBoarding />}></Route>
           <Route path="/createprofile" element={<CreateProfile />}></Route>
           <Route path="/dashboard" element={<DashBoard />}></Route>

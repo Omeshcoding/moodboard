@@ -17,7 +17,7 @@ const data = [
   },
   {
     title: 'Task Scheduling Tools',
-    url: '/taskallocation',
+    url: '/comingsoon',
     image: '/Brief.png',
   },
   {
@@ -27,12 +27,12 @@ const data = [
   },
   {
     title: 'User-Friendly Interface',
-    url: '/dashboard',
+    url: '/comingsoon',
     image: '/support.png',
   },
   {
     title: 'E-Commerce Enabled Vendor Catalogue',
-    url: '/',
+    url: '/comingsoon',
     image: '/service.png',
   },
   {

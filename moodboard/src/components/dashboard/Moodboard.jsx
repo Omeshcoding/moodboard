@@ -1,5 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
+import { Link } from 'react-router-dom';
+
 const Moodboard = () => {
   return (
     <>
@@ -17,9 +19,12 @@ const Moodboard = () => {
             planning a wedding or a large birthday party, InspireBoard helps you
             visualize your ideas and gather inspiration in one place.
           </p>
-          <button className="btn px-6 py-[6px] w-[150px] max-md:mx-auto ml-auto">
-            Try it Now
-          </button>
+          <Link
+            to="/moodboard"
+            className="btn px-6 py-[6px] w-[150px] max-md:mx-auto"
+          >
+            <button>Try it Now</button>
+          </Link>
         </div>
         <div className="flex flex-col justify-center mx-5 w-[45%] max-md:ml-0 max-md:w-full order-1">
           <div className="w-[100%] mx-auto h-full ">

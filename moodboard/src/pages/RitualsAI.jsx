@@ -66,16 +66,16 @@ shared with me recently?"
           <Sender message="Roland Barthes" timeStyle="text-black" />
         </div>
         <div
-          className={`fixed bottom-0 h-20 w-[100%] justify-center bg-white py-2 gap-3 z-0 px-2 md:px-4 items-center flex  `}
+          className={`fixed bottom-0 h-20 w-[100%]  bg-white py-2 gap-0 z-0 px-2 md:px-4 items-center flex  `}
         >
           <Plus size="2.4rem" color="gray" strokeWidth={2} />
-          <div className="relative w-[100%]  ">
+          <div className="relative max-md:w-[100%] w-[60%]  ">
             <input
               type="text"
               placeholder="Type your message"
-              className="mx-auto w-[80%] h-14 text-sm lg:text-lg border-2 border-[#E9EAED] rounded-full px-2 md:px-8"
+              className="mx-auto max-md:w-[100%] w-[90%] h-10 text-sm lg:text-lg border-2 border-[#E9EAED] rounded-full px-3 md:px-8"
             />
-            <span className="absolute md:right-36 top-3">
+            <span className="absolute md:right-10 right-3 top-1 xl:right-14">
               <Smile size="2rem" color="gray" />
             </span>
           </div>

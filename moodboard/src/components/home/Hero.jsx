@@ -48,6 +48,7 @@ const Hero = () => {
               height={1000}
               src="/hero.png"
               width={1000}
+              loading="lazy"
               alt="hero-img"
               className="bg-cover w-full h-[100%]  "
             />

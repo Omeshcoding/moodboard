@@ -34,10 +34,10 @@ h6 {
   @apply flex flex-col items-center justify-center px-1  max-md:text-center h-[100vh]  bg-gradient-to-bl to-[#770C15] from-[#F9AFAF] text-xl self-stretch text-white gap-6;
 }
 .get_started_title {
-  @apply max-md:text-4xl max-md:text-center lg:text-6xl  font-bold capitalize;
+  @apply max-md:text-3xl max-md:text-center lg:text-6xl  font-bold capitalize;
 }
 .get_started_btn {
-  @apply bg-white w-[250px] h-12 text-red-900 font-semibold rounded-md;
+  @apply bg-white text-sm w-[180px] sm:w-[250px] h-12 text-red-900 font-semibold rounded-md;
 }
 
 /* Login */
