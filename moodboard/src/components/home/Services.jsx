@@ -12,7 +12,7 @@ const data = [
   },
   {
     title: 'Vendor Coordination And Management',
-    url: '/',
+    url: '/taskallocation',
     image: '/Food Cart.png',
   },
   {
@@ -27,7 +27,7 @@ const data = [
   },
   {
     title: 'User-Friendly Interface',
-    url: '/',
+    url: '/dashboard',
     image: '/support.png',
   },
   {
@@ -65,7 +65,7 @@ const Services = () => {
               the load off your shoulders
             </p>
             <Link
-              to="/"
+              to="/dashboard"
               className="grow hover:underline flex items-center hover:gap-1 transition-all duration-300 uppercase mt-5 font-extrabold"
             >
               see more

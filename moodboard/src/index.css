@@ -31,10 +31,10 @@ h6 {
 }
 /* Onboarding */
 .onboarding {
-  @apply flex flex-col items-center justify-center h-[900px] sm:h-[100vh]  bg-gradient-to-bl to-[#770C15] from-[#F9AFAF] text-xl self-stretch text-white gap-6;
+  @apply flex flex-col items-center justify-center px-1  max-md:text-center h-[100vh]  bg-gradient-to-bl to-[#770C15] from-[#F9AFAF] text-xl self-stretch text-white gap-6;
 }
 .get_started_title {
-  @apply text-6xl  font-bold;
+  @apply max-md:text-4xl max-md:text-center lg:text-6xl  font-bold capitalize;
 }
 .get_started_btn {
   @apply bg-white w-[250px] h-12 text-red-900 font-semibold rounded-md;
@@ -42,13 +42,13 @@ h6 {
 
 /* Login */
 .login_container {
-  @apply h-auto bg-white w-[90%] md:w-[650px] mx-auto py-20;
+  @apply h-auto bg-white w-[90%] md:w-[650px] mx-auto py-6 lg:py-20 px-2;
 }
 .title_container {
-  @apply flex flex-col text-black  w-full text-center mb-10;
+  @apply flex flex-col text-black  w-full text-center mb-4 lg:mb-10;
 }
 .login_title {
-  @apply text-3xl font-bold max-md:text-xl text-black ml-16  mb-4;
+  @apply text-3xl font-bold max-md:text-xl text-black mb-2;
 }
 .links {
   @apply text-[#991B1B] max-[400px]:text-[11px] text-sm font-semibold;
@@ -67,7 +67,7 @@ h6 {
   @apply px-2 md:px-16 flex flex-col gap-5 text-black;
 }
 .input_field {
-  @apply px-4 rounded-sm py-2;
+  @apply px-4 rounded-sm py-2 border-gray-200 border-2;
 }
 .field_container {
   @apply flex justify-between;
@@ -82,7 +82,7 @@ h6 {
   @apply w-full flex max-sm:flex-col justify-between items-center gap-4;
 }
 .sign-up_with_btn {
-  @apply border-2 border-gray-200 max-sm:px-28 py-2 sm:px-28;
+  @apply border-2 border-gray-200 max-sm:px-28 py-2 sm:px-28  text-center;
 }
 
 /* Dashboard-Overview */
