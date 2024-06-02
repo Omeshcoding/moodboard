@@ -11,7 +11,11 @@ const RitualsAI = () => {
   const [show, setShow] = useState(false);
   const [sendMessage, setSendMessage] = useState('');
   const [message, setMessage] = useState([]);
-  const [chatType, setChatType] = useState(null);
+  const [chatType, setChatType] = useState({
+    type: null,
+    name: 'Shastri Vedaraman',
+    imgUrl: '/ritualsmain.png',
+  });
   const [error, setError] = useState('');
 
   const handleChatType = async (type) => {
@@ -32,7 +36,7 @@ const RitualsAI = () => {
     setSendMessage('');
     try {
       const response = await axios.post(
-        `https://shubh-manglam-planning.vercel.app/api/chat/${chatType}`,
+        `https://shubh-manglam-planning.vercel.app/api/chat/${chatType.type}`,
         { message: sendMessage }
       );
       const receivedMessage = { text: response.data.answer, sender: 'api' };
@@ -84,9 +88,9 @@ const RitualsAI = () => {
           />
 
           <PriestProfile
-            imgUrl="/rituals2.png"
+            imgUrl="/priest3.png"
             type="muslim"
-            name="Kazi Ibrahim"
+            name="Imam Ibrahim"
             chatType={chatType}
             messageType={handleChatType}
           />
@@ -101,16 +105,18 @@ const RitualsAI = () => {
             </p>
           )}
           <img
-            src="/ritualsmain.png"
+            src={chatType.imgUrl}
             height={800}
             width={400}
             alt="profileimage"
             className="mb-4"
           />
           <div className=" text-[16px] text-white text-center mb-20">
-            <p className="text-xl  font-bold mb-2">Shastri Vedaraman</p>
+            <p className="text-xl  font-bold mb-2">{chatType.name}</p>
             <p>
-              AMA about anything relared to Hindu traditions, vastu and rituals{' '}
+              AMA about anything related to{' '}
+              <span className="capitalize font-semibold">{chatType.type}</span>{' '}
+              traditions, vastu and rituals{' '}
             </p>
           </div>
         </div>

@@ -21,7 +21,7 @@ const Moodboard = () => {
           </p>
           <Link
             to="/moodboard"
-            className="btn px-6 py-[6px] w-[150px] max-md:mx-auto"
+            className="btn px-6 py-[6px] w-[150px] ml-auto max-md:mx-auto"
           >
             <button>Try it Now</button>
           </Link>

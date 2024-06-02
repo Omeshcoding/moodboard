@@ -2,9 +2,11 @@ import { Link } from 'react-router-dom';
 
 const CreateProfile = () => {
   return (
-    <section className=" onboarding">
-      <div className="login_container rounded-lg">
-        <p className="login_title px-6 pb-4 md:pb-8">Set up your profile</p>
+    <section className=" onboarding h-[100%]">
+      <div className="login_container rounded-lg my-20 text-left">
+        <p className="login_title pl-2 md:px-6 pb-4 md:pb-8">
+          Set up your profile
+        </p>
         <form action="POST" className="form-container">
           <input type="text" placeholder="Full name" className="input_field" />
           <small>Select Role</small>
