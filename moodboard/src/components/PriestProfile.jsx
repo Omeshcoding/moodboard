@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 
 const PriestProfile = ({ chatType, name, imgUrl, type, messageType }) => {
-  console.log(chatType);
   return (
     <div
       value={chatType}

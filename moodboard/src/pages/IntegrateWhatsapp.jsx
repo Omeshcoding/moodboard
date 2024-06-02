@@ -44,7 +44,7 @@ const IntegrateWhatsapp = () => {
           </p>
           <div className="  flex flex-col  justify-center  items-center px-4 py-2">
             <img
-              src="/qr.png"
+              src="/qr.jpg"
               height={800}
               width={400}
               alt="profileimage"
