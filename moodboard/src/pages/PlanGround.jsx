@@ -137,7 +137,24 @@ const PlanGround = () => {
     (params) => setEdges((eds) => addEdge(params, eds)),
     [setEdges]
   );
-
+  const boardsData = [
+    {
+      imgUrl: '/canvas1.png',
+      title: 'Clothes',
+    },
+    {
+      imgUrl: '/canvas2.png',
+      title: 'Makeup Inspo',
+    },
+    {
+      imgUrl: '/canvas3.png',
+      title: 'Venues',
+    },
+    {
+      imgUrl: '/canvas4.png',
+      title: 'Venue 2',
+    },
+  ];
   return (
     <>
       <button
@@ -152,7 +169,7 @@ const PlanGround = () => {
       <Sidebar
         title="Planground"
         tags={['Square', 'Line', 'Dimond', 'Boolean']}
-        boards={['Catering', 'Decorations', 'Venues', 'Shopping']}
+        boards={boardsData}
         show={show}
       />
       <div style={{ width: '88vw', height: '100vh' }} className="ml-auto ">

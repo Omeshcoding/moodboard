@@ -18,6 +18,10 @@ const DashBoard = () => {
       link: '/planground',
     },
     {
+      name: 'InspireBoard',
+      link: '/moodboard',
+    },
+    {
       name: 'Vendors',
       link: '/taskallocation',
     },

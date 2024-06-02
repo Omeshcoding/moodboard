@@ -189,6 +189,24 @@ const CanvasApp = () => {
       socketRef.current.disconnect();
     };
   }, []);
+  const boardsData = [
+    {
+      imgUrl: '/canvas1.png',
+      title: 'Clothes',
+    },
+    {
+      imgUrl: '/canvas2.png',
+      title: 'Makeup Inspo',
+    },
+    {
+      imgUrl: '/canvas3.png',
+      title: 'Venues',
+    },
+    {
+      imgUrl: '/canvas4.png',
+      title: 'Venue 2',
+    },
+  ];
 
   return (
     <div
@@ -209,7 +227,7 @@ const CanvasApp = () => {
         <Sidebar
           title="InspireBoard"
           tags={['Theme', 'Clothes', 'Venues', 'Makeup']}
-          boards={['Clothes', 'Makeup Inspo', 'Venues', 'Venue 2']}
+          boards={boardsData}
           show={show}
         />
         <div className="z-50 fixed w-40 bottom-36 right-10">
